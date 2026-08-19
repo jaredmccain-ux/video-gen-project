@@ -450,8 +450,3 @@ sceneflow/
 
 ---
 
-## 素材与致谢
-
-- 示例锚点图沿用公开项目 lingbot-world-v2 中的素材
-- 视频生成使用 MiniMax H3，推理由 ComfyUI 承担
-- 语音识别使用 SenseVoice 与 FSMN VAD，推理由 FunASR 承担
