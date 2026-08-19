@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-19T13:33:57+00:00",
+  "shot_count": 16,
+  "missing": [],
+  "duration_s": 121.92,
+  "burned_subtitles": true,
+  "outputs": {
+    "master": "runs/20260819T210000Z-next-scene-together/07_final/studio_master.mp4",
+    "final_with_subtitles": "runs/20260819T210000Z-next-scene-together/07_final/studio_final_sub.mp4"
+  },
+  "origin": "imported_copy",
+  "burned_at": "2026-08-19T13:34:57+00:00",
+  "subtitle_file": "runs/20260819T210000Z-next-scene-together/06_subtitles/full.ass"
+}

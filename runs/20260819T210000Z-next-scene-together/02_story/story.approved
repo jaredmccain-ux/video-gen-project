@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.1",
+  "stage": "story",
+  "artifact": "02_story/story.json",
+  "artifact_sha256": "48e919a12bb270bd8511cac045a9fc30909ac4083debb04144e07231dbb9f7e8",
+  "approved_at": "2026-08-19T13:33:57+00:00",
+  "decision": "approved"
+}

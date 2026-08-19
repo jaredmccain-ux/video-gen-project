@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-19T13:33:56+00:00",
+  "active_source": "images",
+  "selected_images": [
+    "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png",
+    "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG02_wanda_plaza.png",
+    "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG03_cinema.jpg"
+  ],
+  "current_proposal": null,
+  "history": []
+}

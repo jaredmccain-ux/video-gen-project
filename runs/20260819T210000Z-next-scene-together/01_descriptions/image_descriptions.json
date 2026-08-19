@@ -1,0 +1,67 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-08-19T13:33:56+00:00",
+  "images": [
+    {
+      "image_id": "IMG01",
+      "source_path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png",
+      "visible_facts": [
+        "临海桥面，白天，粉色自行车沿灰色金属护栏前进，远山与蓝色水面。"
+      ],
+      "setting": "临海桥面，白天，粉色自行车沿灰色金属护栏前进，远山与蓝色水面。",
+      "people": [
+        {
+          "label": "林川",
+          "appearance": "白色背心、浅色短裤、短黑发哥哥",
+          "pose_or_action": "骑车/行走",
+          "screen_position": "画面前侧"
+        },
+        {
+          "label": "林野",
+          "appearance": "橙白拼接上衣、蓝色短裤弟弟",
+          "pose_or_action": "后座/同行",
+          "screen_position": "林川附近"
+        }
+      ],
+      "objects": [
+        "粉色自行车"
+      ],
+      "mood_or_atmosphere": "暖日光、开阔、青春",
+      "uncertainties": [],
+      "story_affordances": [
+        "临海桥面，白天，粉色自行车沿灰色金属护栏前进，远山与蓝色水面。"
+      ]
+    },
+    {
+      "image_id": "IMG02",
+      "source_path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG02_wanda_plaza.png",
+      "visible_facts": [
+        "城市广场/万达外景，白天，商业建筑与人流。"
+      ],
+      "setting": "城市广场/万达外景，白天，商业建筑与人流。",
+      "people": [],
+      "objects": [],
+      "mood_or_atmosphere": "明亮、城市夏日",
+      "uncertainties": [],
+      "story_affordances": [
+        "城市广场/万达外景，白天，商业建筑与人流。"
+      ]
+    },
+    {
+      "image_id": "IMG03",
+      "source_path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG03_cinema.jpg",
+      "visible_facts": [
+        "电影院室内或入口相关画面。"
+      ],
+      "setting": "电影院室内或入口相关画面。",
+      "people": [],
+      "objects": [],
+      "mood_or_atmosphere": "暗场、影院灯光",
+      "uncertainties": [],
+      "story_affordances": [
+        "电影院室内或入口相关画面。"
+      ]
+    }
+  ],
+  "origin": "imported_copy"
+}
