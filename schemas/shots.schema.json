@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Short-drama shot plan",
+  "type": "object",
+  "required": ["schema_version", "shots"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "shots": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_id",
+          "beat_id",
+          "scene_id",
+          "planned_start_s",
+          "planned_end_s",
+          "duration_s",
+          "story_purpose",
+          "composition",
+          "camera",
+          "action_timeline",
+          "continuity_in",
+          "continuity_out",
+          "characters",
+          "blocking",
+          "dialogue",
+          "subtitle_text",
+          "speaker_mappings",
+          "audio_contract",
+          "generation_mode",
+          "depends_on",
+          "source_anchor_image",
+          "status",
+          "attempt"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "shot_id": { "type": "string", "pattern": "^S\\d{3}$" },
+          "beat_id": { "type": "string" },
+          "scene_id": { "type": "string" },
+          "planned_start_s": { "type": "number", "minimum": 0 },
+          "planned_end_s": { "type": "number", "minimum": 0 },
+          "duration_s": { "type": "number", "minimum": 4, "maximum": 8 },
+          "story_purpose": { "type": "string" },
+          "composition": { "type": "string" },
+          "camera": { "type": "string" },
+          "action_timeline": { "type": "string" },
+          "continuity_in": { "type": "string" },
+          "continuity_out": { "type": "string" },
+          "characters": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+          "blocking": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["character_id", "speaks", "movement_direction", "start", "end"],
+              "additionalProperties": true,
+              "properties": {
+                "character_id": { "type": "string" },
+                "speaks": { "type": "boolean" },
+                "movement_direction": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "screen-left",
+                    "screen-right",
+                    "toward-camera",
+                    "away-from-camera",
+                    "screen-left-toward-camera",
+                    "screen-right-toward-camera",
+                    "screen-left-away-from-camera",
+                    "screen-right-away-from-camera"
+                  ]
+                },
+                "start": { "$ref": "#/$defs/boundary_state" },
+                "end": { "$ref": "#/$defs/boundary_state" }
+              }
+            }
+          },
+          "dialogue": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["speaker_id", "text"],
+              "additionalProperties": true,
+              "properties": {
+                "speaker_id": { "type": "string" },
+                "text": { "type": "string" }
+              }
+            }
+          },
+          "subtitle_text": { "type": "string" },
+          "speaker_mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["character_id", "prompt_speaker_id"],
+              "properties": {
+                "character_id": { "type": "string" },
+                "prompt_speaker_id": { "type": "string", "enum": ["S1"] }
+              }
+            }
+          },
+          "audio_contract": {
+            "type": "object",
+            "required": [
+              "allowed_speaker_ids",
+              "offscreen_human_voice_allowed",
+              "non_diegetic_music",
+              "ambient_sounds",
+              "action_sounds"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "allowed_speaker_ids": { "type": "array", "items": { "type": "string" } },
+              "offscreen_human_voice_allowed": { "type": "boolean", "const": false },
+              "non_diegetic_music": { "type": "boolean", "const": false },
+              "ambient_sounds": { "type": "array", "items": { "type": "string" } },
+              "action_sounds": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "generation_mode": {
+            "type": "string",
+            "enum": ["first_frame", "t2va", "first_last_frame", "ref2va"]
+          },
+          "depends_on": { "type": ["string", "null"] },
+          "source_anchor_image": {
+            "type": ["string", "null"],
+            "enum": ["IMG01", "IMG02", "IMG03", null]
+          },
+          "source_last_frame": { "type": ["string", "null"] },
+          "reference_character_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          },
+          "variation_type": {
+            "type": "string",
+            "enum": ["small", "medium", "large"]
+          },
+          "first_frame_desc": { "type": "string" },
+          "last_frame_desc": { "type": "string" },
+          "motion_desc": { "type": "string" },
+          "selected_reference_paths": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "selected_references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["path"],
+              "additionalProperties": true,
+              "properties": {
+                "path": { "type": "string" },
+                "character_ids": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "roles": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          },
+          "prepared_first_frame": { "type": ["string", "null"] },
+          "status": { "type": "string" },
+          "attempt": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "boundary_state": {
+      "type": "object",
+      "required": ["horizontal", "depth", "facing", "visible", "mouth_state"],
+      "additionalProperties": true,
+      "properties": {
+        "horizontal": { "type": "string", "enum": ["screen-left", "screen-center", "screen-right"] },
+        "depth": { "type": "string", "enum": ["foreground", "midground", "background"] },
+        "facing": {
+          "type": "string",
+          "enum": ["screen-left", "screen-right", "camera", "away-from-camera"]
+        },
+        "visible": { "type": "boolean" },
+        "mouth_state": { "type": "string", "enum": ["closed", "speaking"] }
+      }
+    }
+  }
+}

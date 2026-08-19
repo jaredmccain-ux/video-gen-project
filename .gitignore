@@ -1,0 +1,97 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+!*.env.example
+.vscode/debug.env
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Python environments and caches
+.venv/
+venv/
+env/
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / Remotion 演示片工程
+node_modules/
+.npm/
+demo_video/out/*
+demo_video/public/voice/*.wav
+
+# Generated runs, logs, and local state
+# 仓库只保留 README 里说明的那一个示例项目，其余 run 不入库。
+runs/*
+logs/
+output/
+outputs/
+tmp/
+temp/
+*.log
+*.pid
+*.sqlite
+*.sqlite3
+*.db
+
+# Model weights and machine-learning artifacts
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.tflite
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Generated media (the small source anchors remain tracked)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.wav
+*.mp3
+assets/teaser.png
+assets/character_refs/*
+!assets/character_refs/README.md
+assets/shot_keyframes/*
+!assets/shot_keyframes/README.md
+
+# Build/package output
+build/
+dist/
+*.egg-info/
+
+# Editor and OS noise
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# 放行清单：必须放在以上所有忽略规则之后才生效。
+# 只保留示例项目 20260819T210000Z-next-scene-together 的输入、分镜成片、带字幕成片，
+# 以及演示片工程重新渲染所需的素材。中间生成物与无字幕版本不入库。
+# ---------------------------------------------------------------------------
+!runs/20260819T210000Z-next-scene-together/
+runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/
+!runs/20260819T210000Z-next-scene-together/05_videos/S0*.mp4
+!runs/20260819T210000Z-next-scene-together/07_final/studio_final_sub.mp4
+
+!demo_video/public/film/*.mp4
+!demo_video/out/sceneflow-demo-web.mp4

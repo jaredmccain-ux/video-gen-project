@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Short-drama image descriptions",
+  "type": "object",
+  "required": ["schema_version", "images"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "images": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "image_id",
+          "source_path",
+          "visible_facts",
+          "setting",
+          "people",
+          "objects",
+          "mood_or_atmosphere",
+          "uncertainties"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "image_id": { "type": "string", "enum": ["IMG01", "IMG02", "IMG03"] },
+          "source_path": { "type": "string", "minLength": 1 },
+          "visible_facts": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "setting": { "type": "string", "minLength": 1 },
+          "people": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "appearance", "pose_or_action"],
+              "additionalProperties": true,
+              "properties": {
+                "label": { "type": "string" },
+                "appearance": { "type": "string" },
+                "pose_or_action": { "type": "string" },
+                "screen_position": { "type": "string" }
+              }
+            }
+          },
+          "objects": { "type": "array", "items": { "type": "string" } },
+          "mood_or_atmosphere": { "type": "string" },
+          "uncertainties": { "type": "array", "items": { "type": "string" } },
+          "story_affordances": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

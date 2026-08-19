@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SceneFlow · MiniMax H3 短剧生成流水线入口" />
+    <title>SceneFlow</title>
+    <link rel="stylesheet" href="./gate.css?v=20260819-10" />
+  </head>
+  <body>
+    <div class="crt" aria-hidden="true"></div>
+    <main class="gate" id="gate">
+      <pre class="banner" id="banner" aria-label="SceneFlow"></pre>
+      <div class="tagline"><span>短剧生成流水线 · 人工决策优先</span></div>
+      <div class="console" id="console"></div>
+      <div class="line prompt-line" id="promptLine" hidden>
+        <span class="prompt"><b>λ</b><i>::</i><u>~</u><s>&gt;&gt;</s></span>
+        <span class="entry" id="entry"><span class="typed" id="typedBefore"></span><i class="caret" id="caret">&nbsp;</i><span class="typed" id="typedAfter"></span></span>
+        <input id="command" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="命令输入" />
+      </div>
+    </main>
+    <script src="./gate.js?v=20260819-10"></script>
+  </body>
+</html>

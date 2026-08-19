@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Short-drama story plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "title",
+    "logline",
+    "full_story",
+    "image_order",
+    "characters",
+    "locations",
+    "beats",
+    "style_bible"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "logline": { "type": "string", "minLength": 1 },
+    "full_story": { "type": "string", "minLength": 1 },
+    "image_order": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "string", "enum": ["IMG01", "IMG02", "IMG03"] }
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "character_id",
+          "name",
+          "identity",
+          "appearance",
+          "reference_image_ids",
+          "reference_subject_description"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "character_id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string" },
+          "identity": { "type": "string" },
+          "appearance": { "type": "string" },
+          "relationships": { "type": "string" },
+          "reference_image_ids": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["IMG01", "IMG02", "IMG03"] },
+            "uniqueItems": true
+          },
+          "reference_subject_description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unambiguous visual identification of this character inside the reference images."
+          }
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["location_id", "name", "visual_features"],
+        "additionalProperties": true,
+        "properties": {
+          "location_id": { "type": "string" },
+          "name": { "type": "string" },
+          "visual_features": { "type": "string" }
+        }
+      }
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "beat_id",
+          "duration_s",
+          "summary",
+          "events",
+          "anchor_image_id",
+          "location_id"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "beat_id": { "type": "string" },
+          "duration_s": { "type": "number", "minimum": 4, "maximum": 40 },
+          "summary": { "type": "string" },
+          "events": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "anchor_image_id": {
+            "type": ["string", "null"],
+            "enum": ["IMG01", "IMG02", "IMG03", null]
+          },
+          "location_id": { "type": "string" },
+          "dialogue_notes": { "type": "string" }
+        }
+      }
+    },
+    "style_bible": { "type": "string", "minLength": 1 }
+  }
+}

@@ -1,0 +1,87 @@
+project_name: minimax-short-drama-mvp
+project_root: /root/autodl-tmp/minimax_short_drama
+run_root: runs
+
+input_images:
+  - assets/anchors/anchor_01_832x480.png
+  - assets/anchors/anchor_02_832x480.png
+  - assets/anchors/anchor_03_832x480.png
+
+target_duration_s: 120
+duration_tolerance_s: 3
+aspect_ratio: "16:9"
+short_edge: 768
+dialogue_language: zh-CN
+narration: false
+non_diegetic_music: false
+default_shot_duration_s: 6
+min_shot_duration_s: 4
+max_shot_duration_s: 8
+
+# Rivo OpenAI-compatible gateway: https://rivoapi.com/docs/
+llm:
+  provider: rivo
+  endpoint: https://api.rivoapi.com/v1
+  # Rivo 文档 GPT-5.6 档位：gpt-5.6-sol / gpt-5.6-terra / gpt-5.6-luna
+  # 实测 gpt-5.6-luna 暂无可用渠道，改用 terra
+  model: gpt-5.6-terra
+  api_key_env: RIVO_API_KEY
+
+sglang:
+  # Legacy field kept for config compatibility; video generation uses ComfyUI.
+  base_url: http://127.0.0.1:30000
+
+# 硬字幕：时间轴由 SenseVoice + FSMN VAD 对齐成片真实人声，文字仍以已批准分镜对白为准。
+# 未配置 asr.python（装有 funasr 的解释器）时，字幕校对页仍可用计划时间轴与人工编辑。
+subtitles:
+  asr:
+    python: ""
+    sensevoice_dir: ""
+    vad_dir: ""
+    device: cuda:0
+    max_segment_ms: 15000
+  style:
+    font_name: Noto Sans CJK SC
+    max_chars_per_line: 18
+
+comfyui:
+  base_url: http://127.0.0.1:6006
+  steps: 8
+  width: 864
+  height: 480
+  motion_context: true
+  context_length: "22"
+  audio_context_length: 24
+  text_encoder: qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  fl2va_checkpoint: minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  ref2va_checkpoint: minimax_h3_ref2va_pruned_int8_convrot.safetensors
+
+identity_consistency:
+  enabled: true
+  require_character_references: true
+  reanchor_interval_shots: 2
+  include_previous_last_frame_reference: true
+  ref_image_size: match
+  max_reference_images: 9
+  shot_keyframes_dir: assets/shot_keyframes
+  character_references: {}
+
+consistency_pipeline:
+  enabled: true
+  decompose_shots: true
+  select_references: true
+  generate_character_portraits: true
+  generate_keyframes: true
+  max_refs_per_shot: 8
+  candidates_per_keyframe: 3
+  fl2va_for_variation: [medium, large]
+
+image_generator:
+  enabled: true
+  provider: openai_compatible
+  endpoint: https://api.rivoapi.com/v1
+  model: gpt-image-1.5
+  api_key_env: RIVO_API_KEY
+  size: "1536x1024"
+  quality: medium
+  max_candidates: 4

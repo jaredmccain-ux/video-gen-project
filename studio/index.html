@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MiniMax H3 短剧人工镜头编排工作台" />
+    <title>SceneFlow · 人工镜头编排台</title>
+    <link rel="stylesheet" href="./styles.css?v=20260819-10" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand-lockup" href="/" title="返回入口">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div>
+            <div class="eyebrow">MINIMAX H3 STUDIO</div>
+            <div class="brand-name">SceneFlow</div>
+          </div>
+        </a>
+
+        <div class="project-control">
+          <div class="project-switcher">
+            <span class="project-dot"></span>
+            <div>
+              <span class="project-label">当前项目</span>
+              <select id="runSelect" aria-label="选择项目"></select>
+            </div>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
+          </div>
+          <button class="new-project-button" id="openNewProject" type="button"><span>＋</span> 新建项目</button>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-button" id="openJobHistory" aria-label="查看运行记录">
+            <svg viewBox="0 0 24 24"><path d="M12 8v4l3 2M4.93 4.93a10 10 0 1 1-1.8 11.43M3 4v5h5" /></svg>
+          </button>
+          <div class="save-state" id="connectionState"><span></span>正在连接后端</div>
+          <button class="button button-primary" id="runPipeline">
+            <svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z" /></svg>
+            运行已批准镜头
+          </button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <div class="sidebar-head">
+            <p class="eyebrow">PRODUCTION FLOW</p>
+            <h2>制作流程</h2>
+            <p>先规划，再由人逐镜确认生成输入。</p>
+          </div>
+
+          <nav class="stage-nav" aria-label="制作流程">
+            <button class="stage-item is-done" data-stage="素材准备">
+              <span class="stage-index">01</span>
+              <span class="stage-copy"><strong>素材准备</strong><small>素材数量不限 · 本地保存</small></span>
+              <span class="stage-status">✓</span>
+            </button>
+            <button class="stage-item is-done" data-stage="画面理解">
+              <span class="stage-index">02</span>
+              <span class="stage-copy"><strong>画面理解</strong><small>事实描述 · 已批准</small></span>
+              <span class="stage-status">✓</span>
+            </button>
+            <button class="stage-item is-done" data-stage="故事规划">
+              <span class="stage-index">03</span>
+              <span class="stage-copy"><strong>故事规划</strong><small>12 Beats · 120 秒</small></span>
+              <span class="stage-status">✓</span>
+            </button>
+            <button class="stage-item is-done" data-stage="分镜拆分">
+              <span class="stage-index">04</span>
+              <span class="stage-copy"><strong>分镜拆分</strong><small>16 个镜头 · 已批准</small></span>
+              <span class="stage-status">✓</span>
+            </button>
+            <button class="stage-item is-active" data-stage="人工编排">
+              <span class="stage-index">05</span>
+              <span class="stage-copy"><strong>人工编排</strong><small>输入图、模式与 Prompt</small></span>
+              <span class="stage-status">8</span>
+            </button>
+            <button class="stage-item" data-stage="字幕校对">
+              <span class="stage-index">06</span>
+              <span class="stage-copy"><strong>字幕校对</strong><small>人声对齐 · 样式与烧录</small></span>
+              <span class="stage-status">—</span>
+            </button>
+            <button class="stage-item" data-stage="合片验收">
+              <span class="stage-index">07</span>
+              <span class="stage-copy"><strong>合片验收</strong><small>拼接、烧录与技术检查</small></span>
+              <span class="stage-status">—</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-foot">
+            <div class="human-first"><span>人工决策优先</span><strong>自动路由已关闭</strong></div>
+            <button class="text-button" id="openProjectSettings" type="button">项目设置 <span>↗</span></button>
+          </div>
+        </aside>
+
+        <main class="main-content">
+          <section class="stage-view is-hidden" id="assetPreparationView">
+            <div class="page-heading asset-page-heading">
+              <div>
+                <div class="breadcrumb">制作流程 <span>/</span> 素材准备</div>
+                <h1>你的故事，从哪里开始？</h1>
+                <p>上传画面、让 AI 从零提案，或者把已有灵感交给 AI 润色；三种起点最终汇入同一条短剧流水线。</p>
+              </div>
+              <button class="button button-primary" id="continueToOrchestration">进入画面理解 →</button>
+            </div>
+
+            <section class="inspiration-section">
+              <div class="inspiration-intro">
+                <div><span class="panel-kicker">INSPIRATION INTAKE</span><h2>选择一种创作起点</h2></div>
+                <span class="llm-ready" id="llmReady"><i></i>正在检查 LLM</span>
+              </div>
+              <div class="inspiration-grid">
+                <article class="inspiration-card panel image-origin">
+                  <div class="origin-number">01</div><span class="origin-icon">▧</span>
+                  <h3>我有图片素材</h3>
+                  <p>这里只负责上传图片；上传后请在下方“当前素材库”中手动选择哪些图片作为灵感。</p>
+                  <label class="origin-upload">＋ 上传灵感图片<input id="ideaImageUpload" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden /></label>
+                </article>
+
+                <article class="inspiration-card panel ai-origin">
+                  <div class="origin-number">02</div><span class="origin-icon">✦</span>
+                  <h3>我暂时没有灵感</h3>
+                  <p>给 AI 两个轻量偏好，让它从零提出一个可拍、可继续分镜的 120 秒短剧。</p>
+                  <div class="origin-fields">
+                    <label><span>故事类型</span><select id="scratchGenre"><option>现实情感</option><option>悬疑反转</option><option>轻喜剧</option><option>都市爱情</option><option>家庭伦理</option><option>奇幻寓言</option></select></label>
+                    <label><span>画面气质</span><select id="scratchTone"><option>电影感</option><option>克制写实</option><option>明快轻盈</option><option>冷峻悬疑</option><option>温暖治愈</option></select></label>
+                  </div>
+                  <button class="button button-origin ai" id="generateFromScratch">✦ 一键生成剧情提案</button>
+                </article>
+
+                <article class="inspiration-card panel text-origin">
+                  <div class="origin-number">03</div><span class="origin-icon">✎</span>
+                  <h3>我已经有一个想法</h3>
+                  <p>写下人物、冲突或某个画面。AI 会保留核心创意，补齐钩子、因果链和结尾。</p>
+                  <textarea id="ideaDraft" maxlength="8000" placeholder="例如：两个多年不见的兄弟在旧桥上发现母亲留下的蓝布包……"></textarea>
+                  <div class="idea-meta"><label>类型 <select id="polishGenre"><option>现实情感</option><option>悬疑反转</option><option>轻喜剧</option><option>都市爱情</option><option>家庭伦理</option><option>奇幻寓言</option></select></label><span id="ideaCharCount">0 / 8000</span></div>
+                  <button class="button button-origin" id="polishIdea">用 LLM 润色我的剧情</button>
+                </article>
+              </div>
+            </section>
+
+            <section class="inspiration-result panel is-hidden" id="inspirationResult">
+              <div class="result-head"><div><span class="panel-kicker">STORY PROPOSAL</span><h2 id="proposalTitle">剧情提案</h2></div><span id="proposalMode">AI 从零生成</span></div>
+              <div class="proposal-logline" id="proposalLogline"></div>
+              <div class="proposal-grid"><div><span>类型 / 气质</span><p id="proposalGenre"></p></div><div><span>开场钩子</span><p id="proposalHook"></p></div><div class="wide"><span>故事提案</span><p id="proposalOutline"></p></div><div class="wide"><span>结尾回收</span><p id="proposalEnding"></p></div></div>
+              <div class="local-save-note"><span>✓</span><p>已保存到本地：<code id="proposalSavePath">02_story/studio_drafts/latest.md</code></p></div>
+              <div class="result-actions"><button class="button button-ghost" id="regenerateProposal">重新生成</button><button class="button button-approve" id="acceptProposal">采用这版，进入故事规划 →</button></div>
+            </section>
+
+            <section class="asset-policy panel">
+              <div class="policy-copy"><span class="pulse-dot"></span><div><strong>素材库与模型输入分开管理</strong><small>图片、视频、音频均可不限量上传；单个 H3 镜头输入限制为 9 张图片、3 个视频和 3 个音频。</small></div></div>
+              <div class="policy-limits">
+                <div><strong id="imageUploadCount">0 / 不限</strong><span>素材库图片</span></div>
+                <div><strong id="videoUploadCount">0 / 不限</strong><span>素材库视频</span></div>
+                <div><strong id="audioUploadCount">0 / 不限</strong><span>素材库音频</span></div>
+              </div>
+            </section>
+
+            <section class="upload-grid">
+              <label class="upload-card panel" data-kind="image">
+                <input class="material-upload" data-upload-kind="image" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden />
+                <span class="upload-icon">▧</span><div><strong>上传图片</strong><small>PNG / JPG / WebP · 单张 ≤ 20MB</small></div><em>选择文件</em>
+              </label>
+              <label class="upload-card panel" data-kind="video">
+                <input class="material-upload" data-upload-kind="video" type="file" accept="video/mp4,video/webm,video/quicktime,video/x-matroska" multiple hidden />
+                <span class="upload-icon">▷</span><div><strong>上传视频</strong><small>MP4 / MOV / WebM / MKV · 2–15 秒</small></div><em>选择文件</em>
+              </label>
+              <label class="upload-card panel" data-kind="audio">
+                <input class="material-upload" data-upload-kind="audio" type="file" accept="audio/wav,audio/mpeg,audio/flac,audio/mp4,audio/ogg,audio/aac" multiple hidden />
+                <span class="upload-icon">♫</span><div><strong>上传音频</strong><small>WAV / MP3 / FLAC / M4A / OGG / AAC</small></div><em>选择文件</em>
+              </label>
+            </section>
+
+            <section class="material-library panel">
+              <div class="material-library-head">
+                <div><span class="panel-kicker">LOCAL ASSET LIBRARY</span><h2>当前素材库</h2><p>用户上传的素材会保存在当前项目本地；已有素材继续保留，可用于后续画面理解和逐镜编排。</p></div>
+                <label class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg><input id="assetSearch" type="search" placeholder="搜索素材名称" /></label>
+              </div>
+              <div class="material-tabs" id="materialTabs">
+                <button class="is-selected" data-material-filter="all">全部</button>
+                <button data-material-filter="image">图片</button>
+                <button data-material-filter="video">视频</button>
+                <button data-material-filter="audio">音频</button>
+                <button data-material-filter="upload">仅人工上传</button>
+              </div>
+              <div class="material-selection-bar">
+                <div><strong id="materialSelectionCount">尚未选择灵感图片</strong><small>在下方图片卡片中点击“用作灵感”，数量不限</small></div>
+                <button class="button button-approve" id="saveImageInspiration" disabled>请至少选择 1 张图片</button>
+              </div>
+              <div class="material-grid" id="materialGrid"></div>
+            </section>
+          </section>
+
+          <section class="stage-view is-hidden planning-view" id="descriptionsView">
+            <section class="page-heading planning-heading">
+              <div><div class="breadcrumb">制作流程 <span>/</span> 画面理解</div><h1>先确认事实，再让故事发生</h1><p>模型逐张描述已选灵感图片；你可以修正任何误判，批准后才允许进入故事规划。</p></div>
+              <div class="planning-actions"><span class="workflow-status" id="descriptionsStatus">尚未生成</span><button class="button button-soft" data-workflow-generate="descriptions">✦ 生成画面描述</button><button class="button button-ghost" id="saveDescriptions">保存修改</button><button class="button button-approve" data-workflow-approve="descriptions">批准并进入故事规划 →</button></div>
+            </section>
+            <section class="description-workbench panel">
+              <article class="description-editor" id="descriptionEditor"><div class="planning-empty">请先在素材库选择图片，然后生成画面描述。</div></article>
+            </section>
+          </section>
+
+          <section class="stage-view is-hidden planning-view" id="storyView">
+            <section class="page-heading planning-heading">
+              <div><div class="breadcrumb">制作流程 <span>/</span> 故事规划</div><h1>把画面连接成一条因果链</h1><p>先写八场骨架和正式剧本，再收成约 120 秒可拍剧情；可用豆包重写剧本。</p></div>
+              <div class="planning-actions"><span class="workflow-status" id="storyStatus">尚未生成</span><button class="button button-soft" data-workflow-generate="story">✦ 生成故事</button><button class="button button-ghost" id="reviseStory">重写正式剧本</button><button class="button button-ghost" id="saveStory">保存修改</button><button class="button button-approve" data-workflow-approve="story">批准并进入分镜拆分 →</button></div>
+            </section>
+            <section class="story-workbench panel" id="storyEditor"><div class="planning-empty">请先完成并批准画面理解。</div></section>
+          </section>
+
+          <section class="stage-view is-hidden planning-view" id="shotsView">
+            <section class="page-heading planning-heading">
+              <div><div class="breadcrumb">制作流程 <span>/</span> 分镜拆分</div><h1>把剧情变成可执行镜头</h1><p>每个镜头控制在 4–8 秒；这里确定构图、机位、动作、对白与建议生成模式。</p></div>
+              <div class="planning-actions"><span class="workflow-status" id="shotsStatus">尚未生成</span><button class="button button-soft" data-workflow-generate="shots">✦ 自动拆分镜头</button><button class="button button-ghost" id="saveShots">保存修改</button><button class="button button-approve" data-workflow-approve="shots">批准并进入人工编排 →</button></div>
+            </section>
+            <section class="shot-plan-summary panel" id="shotPlanSummary"></section>
+            <section class="shot-plan-grid" id="shotPlanGrid"><div class="planning-empty panel">请先完成并批准故事规划。</div></section>
+          </section>
+
+          <div class="stage-view" id="orchestrationView">
+          <section class="page-heading">
+            <div>
+              <div class="breadcrumb">制作流程 <span>/</span> 人工编排</div>
+              <h1>逐镜决定，机器执行</h1>
+              <p>每个镜头的生成模式、输入图片和最终 Prompt 都需要人工确认后才能进入生成队列。</p>
+            </div>
+            <div class="heading-stats">
+              <div><strong id="approvedCount">0</strong><span>已批准</span></div>
+              <div><strong id="reviewCount">0</strong><span>待检查</span></div>
+              <div><strong id="pendingCount">0</strong><span>未编排</span></div>
+            </div>
+          </section>
+
+          <section class="control-bar">
+            <div class="control-summary">
+              <span class="pulse-dot"></span>
+              <div><strong>人工编排模式</strong><small>系统只给建议，不会覆盖你的选择</small></div>
+            </div>
+            <label class="search-box">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+              <input id="shotSearch" type="search" placeholder="搜索镜头、场景或人物" />
+            </label>
+            <div class="segmented" role="group" aria-label="镜头筛选">
+              <button class="is-selected" data-filter="all">全部 16</button>
+              <button data-filter="pending">待处理 8</button>
+              <button data-filter="approved">已批准 8</button>
+            </div>
+          </section>
+
+          <section class="orchestration-grid">
+            <div class="shot-browser panel">
+              <div class="panel-head">
+                <div><span class="panel-kicker">SHOT LIST</span><h2>镜头列表</h2></div>
+                <button class="icon-button small" aria-label="列表设置">
+                  <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 5v4M8 15v4"/></svg>
+                </button>
+              </div>
+              <div class="shot-list" id="shotList"></div>
+            </div>
+
+            <div class="editor-column">
+              <article class="shot-hero panel">
+                <div class="shot-hero-copy">
+                  <div class="shot-identity">
+                    <span class="shot-number" id="activeShotId">S003</span>
+                    <span class="status-pill status-review" id="activeStatus">待确认</span>
+                  </div>
+                  <h2 id="activeShotTitle">哥哥展开蓝布包，发现录音笔</h2>
+                  <div class="shot-meta">
+                    <span id="activeScene">桥上 · 傍晚</span><i></i><span id="activeDuration">8 秒</span><i></i><span>Beat B03</span>
+                  </div>
+                </div>
+                <div class="hero-actions">
+                  <button class="button button-ghost" id="prevShot">← 上一镜</button>
+                  <button class="button button-ghost" id="nextShot">下一镜 →</button>
+                </div>
+              </article>
+
+              <article class="decision-card panel">
+                <div class="section-title-row">
+                  <div><span class="section-step">A</span><div><h3>选择生成方式</h3><p>这是人工决定项，系统不会自动切换。</p></div></div>
+                  <span class="required-tag">必填</span>
+                </div>
+                <div class="mode-grid" id="modeGrid">
+                  <button class="mode-card" data-mode="T2VA">
+                    <span class="mode-icon">T</span><strong>文本生成</strong><small>T2VA · 不使用图片</small><i></i>
+                  </button>
+                  <button class="mode-card" data-mode="I2VA">
+                    <span class="mode-icon">I</span><strong>单首帧</strong><small>I2VA · 1 张起始图</small><i></i>
+                  </button>
+                  <button class="mode-card is-selected" data-mode="FL2VA">
+                    <span class="mode-icon">F</span><strong>首尾帧</strong><small>FL2VA · 精确控制变化</small><i></i>
+                  </button>
+                  <button class="mode-card" data-mode="Ref2VA">
+                    <span class="mode-icon">R</span><strong>多模态参考</strong><small>Ref2VA · 图片 / 视频 / 音频</small><i></i>
+                  </button>
+                </div>
+                <div class="recommendation">
+                  <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 14.5C7.6 13.7 7 12.4 7 11a5 5 0 0 1 10 0c0 1.4-.6 2.7-1.5 3.5-.6.5-.9 1.1-1 1.5h-5c-.1-.4-.4-1-.9-1.5Z"/></svg>
+                  <p><strong id="recommendationTitle">系统建议</strong> <span id="recommendationCopy">建议来自原流水线，只作参考；最终选择以人工编排为准。</span></p>
+                  <button id="adoptRecommendation">采用建议</button>
+                </div>
+              </article>
+
+              <article class="decision-card panel">
+                <div class="section-title-row">
+                  <div><span class="section-step">B</span><div><h3>编排多模态输入素材</h3><p id="inputHint">FL2VA 需要 1 张首帧和 1 张末帧。</p></div></div>
+                  <div class="input-actions"><button class="button button-ai-image" id="openAIImage">✦ AI 生成图片</button><button class="button button-soft" id="assetLibrary">打开素材库</button></div>
+                </div>
+                <div class="input-group-heading"><div><strong>时序关键帧</strong><small>首帧和尾帧可随时指定；只有匹配当前 H3 模式的输入会被提交</small></div><span id="frameModeBadge">当前模式：FL2VA</span></div>
+                <div class="asset-layout">
+                  <div class="asset-slot" id="firstAssetSlot">
+                    <div class="asset-label"><span>首帧 · 0 秒</span><em id="firstAssetRequirement">当前模式必需</em></div>
+                    <div class="asset-preview anchor-one" id="firstAssetPreview" role="img" aria-label="首帧预览">
+                      <div class="empty-asset">点击选择首帧</div>
+                      <div class="asset-overlay"><button type="button" data-preview-frame="first">放大</button><button type="button" data-pick="first">选择</button></div>
+                    </div>
+                    <div class="asset-info"><div><strong id="firstAssetName">尚未选择</strong><small id="firstAssetMeta">从素材库选择</small></div><div class="frame-input-actions"><button type="button" data-pick="first">重新选择</button><button type="button" data-clear-frame="first">删除</button></div></div>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true"><span>动作变化</span><svg viewBox="0 0 52 18"><path d="M1 9h47M41 2l7 7-7 7"/></svg></div>
+                  <div class="asset-slot" id="lastAssetSlot">
+                    <div class="asset-label"><span>尾帧 · 结束时刻</span><em id="lastAssetRequirement">当前模式必需</em></div>
+                    <div class="asset-preview generated-frame" id="lastAssetPreview">
+                      <div class="empty-asset">点击选择末帧</div>
+                      <div class="asset-overlay"><button type="button" data-preview-frame="last">放大</button><button type="button" data-pick="last">选择</button></div>
+                    </div>
+                    <div class="asset-info"><div><strong id="lastAssetName">尚未选择</strong><small id="lastAssetMeta">从素材库选择</small></div><div class="frame-input-actions"><button type="button" data-pick="last">重新选择</button><button type="button" data-clear-frame="last">删除</button></div></div>
+                  </div>
+                </div>
+                <div class="cross-shot-assets" id="crossShotAssets" hidden>
+                  <div class="cross-shot-assets-head"><div><strong>跨镜头承接素材</strong><small>自动汇集第一镜已生成末帧，以及当前镜头之前由 AI 生成的图片</small></div><span>本地项目资产</span></div>
+                  <div class="cross-shot-assets-list" id="crossShotAssetsList"></div>
+                </div>
+                <div class="input-group-heading reference-heading"><div><strong>多模态参考</strong><small>最多 9 张图片；用途由人指定，不再默认绑定人物身份</small></div><span id="referenceModeBadge">Ref2VA 输入</span></div>
+                <div class="reference-strip" id="referenceStrip">
+                  <div class="reference-title"><span>人物 / 场景 / 风格参考 <b id="imageRefCount">0 / 9</b></span><small>每张图可独立选择身份、场景或风格用途</small></div>
+                  <div id="referenceChips"></div>
+                  <button class="add-reference" id="addReference">＋ 添加参考</button>
+                </div>
+                <div class="reference-strip keyframe-reference-strip" id="keyframeReferenceStrip">
+                  <div class="reference-title"><span>关键帧参考 <b id="keyframeRefCount">0</b></span><small>参考动作状态、构图与空间关系，不自动绑定人物身份</small></div>
+                  <div id="keyframeReferenceChips"></div>
+                  <button class="add-reference" id="addKeyframeReference">＋ 添加关键帧</button>
+                </div>
+                <div class="reference-strip" id="videoReferenceStrip">
+                  <div class="reference-title"><span>源视频 <b id="videoRefCount">0 / 3 · 待抽帧</b></span><small>可预览并指定用途；优化 Prompt 时自动抽取 1–3 帧作为 Picture 连续性参考，不提交整段视频 latent</small></div>
+                  <div id="videoReferenceChips"></div>
+                  <button class="add-reference" id="addVideoReference">＋ 添加视频</button>
+                </div>
+                <div class="reference-strip" id="audioReferenceStrip">
+                  <div class="reference-title"><span>参考音频 <b id="audioRefCount">0 / 3</b></span><small>Ref2VA · 可指定环境声、人声音色、动作音效或声音节奏用途</small></div>
+                  <div id="audioReferenceChips"></div>
+                  <button class="add-reference" id="addAudioReference">＋ 添加音频</button>
+                </div>
+              </article>
+
+              <article class="decision-card panel">
+                <div class="section-title-row">
+                  <div><span class="section-step">C</span><div><h3>LLM 初稿 → MiniMax 官方 Skill Prompt <span class="official-skill-badge">已优化</span></h3><p>仅点击“重新生成并优化”时调用：实际图片 + 视频采样 + 音频摘要 + 当前分镜 → 多模态 LLM → h3-prompt-writing；素材绑定与当前 Prompt 会自动保存。</p></div></div>
+                  <div class="prompt-tools"><button id="copyPrompt">复制</button><button id="resetPrompt">重新生成并优化</button></div>
+                </div>
+                <div class="prompt-picture-contract" id="promptPictureContract" aria-live="polite"></div>
+                <div class="prompt-editor">
+                  <div class="prompt-gutter"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span></div>
+                  <div class="prompt-content" id="promptText" contenteditable="true" spellcheck="false">How the reference pictures align with the target video — Picture 1 aligns with 0.00s; Picture 2 aligns with 8.00s.
+
+integrated_multimodal_description:
+[Shot 1] 写实电影感短剧画面，采用一个连续镜头。开场严格保持首帧构图：林川位于画面左侧中景，双手抓住蓝布包；林野在画面右侧看向布包。
+
+8秒内，林川解开布包结，蓝布缓慢展开，露出黑色录音笔；林野向前半步但保持闭口。镜头缓慢推近道具，人物身份、服装、画面方向保持一致。
+
+overall_soundscape: 桥面风声、布料摩擦声与按键轻响。
+non_diegetic_music: N/A</div>
+                </div>
+                <div class="prompt-footer">
+                  <span><i class="validation-dot"></i>结构检查通过 · 无旁白 · 无 BGM</span>
+                  <span id="charCount">421 字符</span>
+                </div>
+              </article>
+
+              <article class="approval-card panel">
+                <div class="approval-checks">
+                  <label><input id="confirmInputs" type="checkbox" /><span>我已确认生成模式和所有输入图片</span></label>
+                  <label><input id="confirmContinuity" type="checkbox" /><span>我已检查人物身份、道具和场景连续性</span></label>
+                  <label><input id="lockShot" type="checkbox" /><span>锁定本镜头，后续批处理不得修改</span></label>
+                </div>
+                <div class="approval-actions">
+                  <button class="button button-soft" id="generateShot">生成本镜头</button>
+                  <button class="button button-approve" id="approveShot">批准 S003 并进入下一镜</button>
+                </div>
+              </article>
+            </div>
+
+            <aside class="context-column">
+              <article class="context-card panel">
+                <div class="panel-head compact"><div><span class="panel-kicker">CONTEXT</span><h3>镜头上下文</h3></div></div>
+                <div class="continuity-flow" id="shotContextFlow"><div class="planning-empty">正在读取当前镜头上下文</div></div>
+              </article>
+
+              <article class="context-card panel">
+                <div class="panel-head compact"><div><span class="panel-kicker">CONSTRAINTS</span><h3>当前镜头硬约束</h3></div><span class="count-badge" id="constraintCount">0</span></div>
+                <ul class="constraint-list" id="constraintList"></ul>
+              </article>
+
+              <article class="context-card panel">
+                <div class="panel-head compact"><div><span class="panel-kicker">HISTORY</span><h3>决策记录</h3></div></div>
+                <div class="history-list" id="jobList"><div><span>—</span><p>暂无生成任务</p></div></div>
+              </article>
+            </aside>
+          </section>
+          </div>
+
+          <section class="stage-view is-hidden planning-view" id="subtitleView">
+            <section class="page-heading planning-heading">
+              <div><div class="breadcrumb">制作流程 <span>/</span> 字幕校对</div><h1>人声对齐、样式与烧录</h1><p>先按分镜对白生成计划字幕，再用本机语音识别把时间轴对到成片真实人声上；文字仍以剧本为准。确认样式后直接烧录硬字幕。</p></div>
+              <div class="planning-actions">
+                <span class="workflow-status" id="subtitleStatus">尚未生成</span>
+                <button class="button button-soft" id="generateSubtitles">✦ 生成计划字幕</button>
+                <button class="button button-soft" id="alignSubtitles">⟲ 按人声对齐</button>
+                <button class="button button-ghost" id="saveSubtitles">保存修改</button>
+                <button class="button button-approve" id="burnSubtitles">烧录硬字幕 →</button>
+              </div>
+            </section>
+
+            <section class="subtitle-layout">
+              <article class="panel subtitle-workbench">
+                <div class="panel-head compact">
+                  <div><span class="panel-kicker">TIMELINE</span><h3>成片时间轴</h3></div>
+                  <span class="subtitle-source" id="subtitleTimingSource">—</span>
+                </div>
+                <div class="subtitle-cue-head"><span>镜头</span><span>开始 (秒)</span><span>结束 (秒)</span><span>字幕文本</span></div>
+                <div id="subtitleCueList" class="subtitle-cues"><div class="planning-empty">点击“生成计划字幕”开始。</div></div>
+              </article>
+
+              <aside class="subtitle-side">
+                <article class="panel subtitle-style">
+                  <div class="panel-head compact"><div><span class="panel-kicker">ASS STYLE</span><h3>硬字幕样式</h3></div><button class="text-button" id="resetSubtitleStyle" type="button">恢复默认</button></div>
+                  <div class="subtitle-style-grid">
+                    <label><span>字体</span><select id="styleFontName"></select></label>
+                    <label><span>字号</span><input id="styleFontSize" type="number" min="12" max="120" step="1" /></label>
+                    <label><span>描边</span><input id="styleOutline" type="number" min="0" max="8" step="0.1" /></label>
+                    <label><span>阴影</span><input id="styleShadow" type="number" min="0" max="8" step="0.1" /></label>
+                    <label><span>底边距</span><input id="styleMarginV" type="number" min="0" max="240" step="1" /></label>
+                    <label><span>左右边距</span><input id="styleMarginH" type="number" min="0" max="400" step="1" /></label>
+                    <label><span>单行字数</span><input id="styleMaxChars" type="number" min="8" max="40" step="1" /></label>
+                    <label><span>字间距</span><input id="styleSpacing" type="number" min="0" max="4" step="0.1" /></label>
+                    <label class="wide"><span>加粗</span><select id="styleBold"><option value="true">加粗（推荐）</option><option value="false">常规</option></select></label>
+                    <label class="wide"><span>淡入 / 淡出 (毫秒)</span><span class="subtitle-pair"><input id="styleFadeIn" type="number" min="0" max="600" step="10" /><input id="styleFadeOut" type="number" min="0" max="600" step="10" /></span></label>
+                  </div>
+                  <p class="subtitle-style-note">院线风格：白字黑描边、底部居中、最多两行、不加半透明底框，避免遮挡画面。</p>
+                </article>
+
+                <article class="panel subtitle-preview-panel">
+                  <div class="panel-head compact"><div><span class="panel-kicker">PREVIEW</span><h3>字幕文件</h3></div>
+                    <div class="subtitle-tabs"><button class="is-selected" data-subtitle-format="ass" type="button">ASS</button><button data-subtitle-format="srt" type="button">SRT</button></div>
+                  </div>
+                  <textarea id="subtitlePreview" class="story-main" readonly></textarea>
+                </article>
+              </aside>
+            </section>
+          </section>
+
+          <section class="stage-view is-hidden planning-view" id="assembleView">
+            <section class="page-heading planning-heading">
+              <div><div class="breadcrumb">制作流程 <span>/</span> 合片验收</div><h1>拼接、烧录与检查</h1><p>按镜头顺序拼接已完成视频，可选烧录字幕。缺镜会跳过并在报告里列出。</p></div>
+              <div class="planning-actions"><span class="workflow-status" id="assembleStatus">尚未合片</span><button class="button button-primary" id="runAssemble">开始合片</button></div>
+            </section>
+            <section class="assemble-layout">
+              <article class="panel">
+                <div class="panel-head compact"><div><span class="panel-kicker">FINAL CUT</span><h3>成片预览</h3></div></div>
+                <div id="finalPreview" class="final-preview"><div class="planning-empty">还没有成片。</div></div>
+              </article>
+              <article class="panel">
+                <div class="panel-head compact"><div><span class="panel-kicker">REPORT</span><h3>镜头与缺失</h3></div></div>
+                <div id="assembleReport" class="assemble-report"><div class="planning-empty">合片后显示报告。</div></div>
+              </article>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog class="asset-dialog" id="assetDialog">
+      <div class="dialog-head">
+        <div><span class="panel-kicker">ASSET LIBRARY</span><h2>选择输入图片</h2></div>
+        <button class="dialog-close" id="closeAssetDialog" aria-label="关闭">×</button>
+      </div>
+      <div class="dialog-tools">
+        <label class="button button-soft"><span id="assetUploadLabel">上传图片</span><input id="assetUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden /></label>
+        <span id="assetRoleHint">选择一张图片</span>
+      </div>
+      <div class="asset-gallery" id="assetGallery"></div>
+    </dialog>
+
+    <dialog class="new-project-dialog" id="newProjectDialog" aria-labelledby="newProjectTitle">
+      <form id="newProjectForm">
+        <div class="new-project-hero">
+          <div class="new-project-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <button class="dialog-close" id="closeNewProject" type="button" aria-label="关闭">×</button>
+          <span class="panel-kicker">NEW LOCAL PROJECT</span>
+          <h2 id="newProjectTitle">从一个干净的创作空间开始</h2>
+          <p>素材、剧情、分镜、Prompt 与生成结果都会独立保存在这个项目的本地目录中。</p>
+        </div>
+        <div class="new-project-body">
+          <label class="new-project-field"><span>项目名称</span><input id="newProjectName" name="project_name" maxlength="80" autocomplete="off" placeholder="例如：雨夜来信" required /><small>支持中文；系统会自动生成安全且唯一的本地目录名。</small></label>
+          <div class="new-project-storage"><span>⌂</span><div><strong>本机持久化</strong><small>创建后立即写入 <code>runs/&lt;project-id&gt;/</code>，刷新页面或重启服务不会丢失。</small></div></div>
+          <div class="new-project-flow"><div class="is-current"><b>01</b><span>准备灵感</span></div><i>→</i><div><b>02</b><span>理解画面</span></div><i>→</i><div><b>03</b><span>生成故事与分镜</span></div></div>
+        </div>
+        <div class="new-project-actions"><button class="button button-ghost" id="cancelNewProject" type="button">取消</button><button class="button button-primary" id="createProject" type="submit">创建并进入素材准备 →</button></div>
+      </form>
+    </dialog>
+
+    <dialog class="asset-dialog ai-image-dialog" id="aiImageDialog">
+      <div class="dialog-head">
+        <div><span class="panel-kicker">AI IMAGE GENERATION</span><h2>为当前镜头生成输入图片</h2></div>
+        <button class="dialog-close" id="closeAIImageDialog" aria-label="关闭">×</button>
+      </div>
+      <div class="ai-image-body">
+        <div class="ai-image-model"><span>✦</span><div><strong>项目 AI 生图模型</strong><small id="aiImageModelHint">使用本地配置的 image_generator</small></div></div>
+        <label class="ai-image-field"><span>图片用途</span><select id="aiImageRole"></select><small>生成结果会永久保存在当前项目素材库；首帧、末帧或参考图会自动绑定当前镜头。</small></label>
+        <label class="ai-image-field"><span>画面 Prompt</span><textarea id="aiImagePrompt" maxlength="8000" placeholder="描述人物、场景、光线、构图、镜头角度和希望保持的视觉细节"></textarea><small><b id="aiImagePromptCount">0</b> / 8000 字符</small></label>
+        <div class="ai-image-note"><span>✓</span><p>系统会自动补充当前镜头的叙事目的、构图、项目画幅以及无字幕、无水印要求。</p></div>
+      </div>
+      <div class="ai-image-actions"><button class="button button-ghost" id="cancelAIImage">取消</button><button class="button button-primary" id="generateAIImage">✦ 生成并使用图片</button></div>
+    </dialog>
+
+    <dialog class="image-lightbox" id="imageLightbox" aria-labelledby="imageLightboxTitle">
+      <button class="image-lightbox-close" id="closeImageLightbox" type="button" aria-label="关闭大图">×</button>
+      <div class="image-lightbox-stage"><img id="imageLightboxPreview" alt="AI 生成图片大图预览" /></div>
+      <div class="image-lightbox-caption"><div><span>IMAGE PREVIEW</span><strong id="imageLightboxTitle">图片预览</strong></div><small id="imageLightboxMeta">点击遮罩或按 Esc 关闭</small></div>
+    </dialog>
+
+    <dialog class="video-preview-dialog" id="videoPreviewDialog" aria-labelledby="videoPreviewTitle">
+      <button class="image-lightbox-close" id="closeVideoPreview" type="button" aria-label="关闭视频预览">×</button>
+      <div class="video-preview-stage"><video id="videoPreviewPlayer" controls preload="metadata" playsinline></video></div>
+      <div class="image-lightbox-caption"><div><span>VIDEO PREVIEW</span><strong id="videoPreviewTitle">视频预览</strong></div><small id="videoPreviewMeta">可播放、暂停和拖动时间轴查看具体内容</small></div>
+    </dialog>
+
+    <dialog class="asset-dialog" id="jobHistoryDialog">
+      <div class="dialog-head">
+        <div><span class="panel-kicker">RUN LOG</span><h2>运行记录</h2></div>
+        <button class="dialog-close" id="closeJobHistory" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="history-dialog-list" id="jobHistoryList"><div class="planning-empty">暂无生成任务</div></div>
+    </dialog>
+    <dialog class="asset-dialog" id="projectSettingsDialog">
+      <div class="dialog-head">
+        <div><span class="panel-kicker">PROJECT</span><h2>项目设置</h2></div>
+        <button class="dialog-close" id="closeProjectSettings" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="settings-grid" id="projectSettingsBody"><div class="planning-empty">正在读取项目配置</div></div>
+    </dialog>
+    <section class="ai-progress" id="aiProgress" role="status" aria-live="polite" aria-hidden="true">
+      <div class="ai-progress-head"><div><span class="ai-progress-mark">✦</span><div><strong id="aiProgressTitle">AI 正在工作</strong><small id="aiProgressStep">正在准备请求</small></div></div><b id="aiProgressPercent">0%</b></div>
+      <div class="ai-progress-track"><i id="aiProgressBar"></i></div>
+      <div class="ai-progress-foot"><span id="aiProgressHint">预计进度，会随实际返回自动完成</span><button id="aiProgressDismiss" type="button" aria-label="收起进度">×</button></div>
+    </section>
+    <div class="toast" id="toast" role="status"><span>✓</span><p>更改已自动保存</p></div>
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+    <script src="./app.js?v=20260819-10"></script>
+  </body>
+</html>

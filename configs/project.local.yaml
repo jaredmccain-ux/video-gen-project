@@ -1,0 +1,94 @@
+project_name: minimax-short-drama-mvp
+# Resolve relative to this config file, so the repository can be moved to any local machine.
+project_root: ..
+run_root: runs
+
+input_images:
+  - assets/anchors/anchor_01_832x480.png
+  - assets/anchors/anchor_02_832x480.png
+  - assets/anchors/anchor_03_832x480.png
+
+target_duration_s: 120
+duration_tolerance_s: 3
+aspect_ratio: "16:9"
+short_edge: 768
+dialogue_language: zh-CN
+narration: false
+non_diegetic_music: false
+default_shot_duration_s: 6
+min_shot_duration_s: 4
+max_shot_duration_s: 8
+
+llm:
+  # 火山方舟 OpenAI 兼容：https://www.volcengine.com/docs/82379/1399008
+  provider: ark
+  endpoint: https://ark.cn-beijing.volces.com/api/v3
+  model: doubao-seed-evolving
+  api_key_env: ARK_API_KEY
+  # 规划任务需要稳定返回结构化正文；避免推理 token 在正文前耗尽。
+  thinking: disabled
+
+sglang:
+  base_url: http://127.0.0.1:30000
+
+# 硬字幕：时间轴由本机 SenseVoice + FSMN VAD 对齐成片真实人声，文字仍以已批准分镜对白为准。
+subtitles:
+  asr:
+    # 装有 funasr 的解释器；与 Studio 服务可以是不同环境。
+    python: /home/ipad_3d/miniconda3/envs/vc/bin/python
+    sensevoice_dir: /home/ipad_3d/.cache/modelscope/models/iic--SenseVoiceSmall/snapshots/master
+    vad_dir: /home/ipad_3d/.cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master
+    device: cuda:0
+    max_segment_ms: 15000
+  # 院线风格：白字黑描边、底部居中、最多两行；数值按成片高度自动缩放，可在字幕校对页覆盖。
+  style:
+    font_name: Noto Sans CJK SC
+    max_chars_per_line: 18
+
+comfyui:
+  base_url: http://127.0.0.1:6006
+  # Aligned with MiniMax H3 with Motion Context.json
+  steps: 8
+  width: 864
+  height: 480
+  motion_context: true
+  context_length: "22"
+  audio_context_length: 24
+  text_encoder: qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  fl2va_checkpoint: minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  ref2va_checkpoint: minimax_h3_ref2va_pruned_int8_convrot.safetensors
+
+identity_consistency:
+  enabled: true
+  require_character_references: true
+  # 场景首镜及每隔 2 镜使用固定角色参考图重新锚定，其余连续镜头沿用上一镜末帧。
+  reanchor_interval_shots: 2
+  include_previous_last_frame_reference: true
+  ref_image_size: match
+  max_reference_images: 9
+  shot_keyframes_dir: assets/shot_keyframes
+  # 可按角色 ID 手动覆盖/补充故事中由 IMGxx 派生的参考图。
+  character_references: {}
+
+# 一致性预处理：角色正侧背注册、镜头首尾分解、智能选图、关键帧→FL2VA。
+consistency_pipeline:
+  enabled: true
+  decompose_shots: true
+  select_references: true
+  generate_character_portraits: true
+  generate_keyframes: true
+  max_refs_per_shot: 8
+  candidates_per_keyframe: 3
+  fl2va_for_variation: [medium, large]
+
+# 关键帧/肖像静帧生成（OpenAI 兼容 Images API，如 Rivo 的 gpt-image-*）。
+# 关闭时仍可做分解与选图；FL2VA 仅在手动放入 assets/shot_keyframes/Sxxx.last.png 时启用。
+# 火山方舟 Seedream 生图（与 LLM 共用 ARK_API_KEY）：/api/v3/images/generations
+image_generator:
+  enabled: true
+  provider: ark
+  endpoint: https://ark.cn-beijing.volces.com/api/v3
+  model: doubao-seedream-4-0-250828
+  api_key_env: ARK_API_KEY
+  size: "1536x1024"
+  max_candidates: 2
