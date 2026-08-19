@@ -1,0 +1,74 @@
+project_name: minimax-short-drama-mvp
+project_root: /data/yyli/minimax_short_drama
+run_root: /data/yyli/minimax_short_drama/runs
+input_images:
+- /data/yyli/minimax_short_drama/assets/anchors/anchor_01_832x480.png
+- /data/yyli/minimax_short_drama/assets/anchors/anchor_02_832x480.png
+- /data/yyli/minimax_short_drama/assets/anchors/anchor_03_832x480.png
+target_duration_s: 120
+duration_tolerance_s: 3
+aspect_ratio: '16:9'
+short_edge: 768
+dialogue_language: zh-CN
+narration: false
+non_diegetic_music: false
+default_shot_duration_s: 6
+min_shot_duration_s: 4
+max_shot_duration_s: 8
+llm:
+  provider: ark
+  endpoint: https://ark.cn-beijing.volces.com/api/v3
+  model: doubao-seed-evolving
+  api_key_env: ARK_API_KEY
+  thinking: disabled
+sglang:
+  base_url: http://127.0.0.1:30000
+subtitles:
+  asr:
+    python: /home/ipad_3d/miniconda3/envs/vc/bin/python
+    sensevoice_dir: /home/ipad_3d/.cache/modelscope/models/iic--SenseVoiceSmall/snapshots/master
+    vad_dir: /home/ipad_3d/.cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master
+    device: cuda:0
+    max_segment_ms: 15000
+  style:
+    font_name: Noto Sans CJK SC
+    max_chars_per_line: 18
+comfyui:
+  base_url: http://127.0.0.1:6006
+  steps: 8
+  width: 864
+  height: 480
+  motion_context: true
+  context_length: '22'
+  audio_context_length: 24
+  text_encoder: qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  fl2va_checkpoint: minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  ref2va_checkpoint: minimax_h3_ref2va_pruned_int8_convrot.safetensors
+identity_consistency:
+  enabled: true
+  require_character_references: true
+  reanchor_interval_shots: 2
+  include_previous_last_frame_reference: true
+  ref_image_size: match
+  max_reference_images: 9
+  shot_keyframes_dir: assets/shot_keyframes
+  character_references: {}
+consistency_pipeline:
+  enabled: true
+  decompose_shots: true
+  select_references: true
+  generate_character_portraits: true
+  generate_keyframes: true
+  max_refs_per_shot: 8
+  candidates_per_keyframe: 3
+  fl2va_for_variation:
+  - medium
+  - large
+image_generator:
+  enabled: true
+  provider: ark
+  endpoint: https://ark.cn-beijing.volces.com/api/v3
+  model: doubao-seedream-4-0-250828
+  api_key_env: ARK_API_KEY
+  size: 1536x1024
+  max_candidates: 2

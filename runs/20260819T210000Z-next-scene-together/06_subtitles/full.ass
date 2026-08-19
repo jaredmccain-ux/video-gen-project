@@ -1,0 +1,56 @@
+[Script Info]
+Title: 下一场，还一起
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+PlayResX: 1344
+PlayResY: 768
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Noto Sans CJK SC,44,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0.4,0,1,2.6,0.8,2,70,70,46,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:02.51,0:00:06.38,Default,C02,0,0,0,,{\fad(80,60)}快点！今天最后一场，迟到一分钟都不行！
+Dialogue: 0,0:00:06.46,0:00:12.34,Default,C01,0,0,0,,{\fad(80,60)}电影又不会跑。以前让你上学，\N你怎么没这么积极？
+Dialogue: 0,0:00:12.42,0:00:15.15,Default,C02,0,0,0,,{\fad(80,60)}因为以前你不会明天就走。
+Dialogue: 0,0:00:16.86,0:00:18.63,Default,C02,0,0,0,,{\fad(80,60)}别把那个弄丢了！
+Dialogue: 0,0:00:18.71,0:00:21.65,Default,C01,0,0,0,,{\fad(80,60)}里面什么东西，比你哥还重要？
+Dialogue: 0,0:00:21.73,0:00:23.27,Default,C02,0,0,0,,{\fad(80,60)}到了再告诉你。
+Dialogue: 0,0:00:25.33,0:00:28.04,Default,C01,0,0,0,,{\fad(80,60)}正好，我也有东西没告诉你。
+Dialogue: 0,0:00:28.12,0:00:30.28,Default,C02,0,0,0,,{\fad(80,60)}那谁先说谁输。
+Dialogue: 0,0:00:35.33,0:00:36.06,Default,C01,0,0,0,,{\fad(80,60)}票呢？
+Dialogue: 0,0:00:36.14,0:00:38.44,Default,C02,0,0,0,,{\fad(80,60)}明明放这里了……
+Dialogue: 0,0:00:41.05,0:00:42.08,Default,C01,0,0,0,,{\fad(80,60)}最后一场哦。
+Dialogue: 0,0:00:42.16,0:00:44.11,Default,C02,0,0,0,,{\fad(80,60)}你别站着啊，帮我找！
+Dialogue: 0,0:00:49.94,0:00:51.41,Default,C01,0,0,0,,{\fad(80,60)}你兜里是什么？
+Dialogue: 0,0:00:51.49,0:00:53.59,Default,C01,0,0,0,,{\fad(80,60)}找了五分钟，原来你才是小偷。
+Dialogue: 0,0:00:53.67,0:00:55.95,Default,C02,0,0,0,,{\fad(80,60)}早上怕丢，我换地方了……忘了。
+Dialogue: 0,0:00:56.03,0:00:59.53,Default,C01,0,0,0,,{\fad(80,60)}你这记性，以后我不在，看你怎么办。
+Dialogue: 0,0:00:59.61,0:01:01.20,Default,C02,0,0,0,,{\fad(80,60)}所以才要赶上今天。
+Dialogue: 0,0:01:04.60,0:01:06.64,Default,C02,0,0,0,,{\fad(80,60)}本来准备电影结束再给你。
+Dialogue: 0,0:01:06.97,0:01:08.89,Default,C02,0,0,0,,{\fad(80,60)}说好谁先说谁输。
+Dialogue: 0,0:01:09.21,0:01:09.88,Default,C01,0,0,0,,{\fad(80,60)}行，那我也不说。
+Dialogue: 0,0:01:09.96,0:01:11.15,Default,C02,0,0,0,,{\fad(80,60)}你真幼稚。
+Dialogue: 0,0:01:11.52,0:01:12.32,Default,C01,0,0,0,,{\fad(80,60)}跟你学的。
+Dialogue: 0,0:01:13.77,0:01:15.62,Default,C01,0,0,0,,{\fad(80,60)}别看了，下次还骑。
+Dialogue: 0,0:01:23.00,0:01:23.69,Default,C01,0,0,0,,{\fad(80,60)}你先输了。
+Dialogue: 0,0:01:23.77,0:01:24.82,Default,C02,0,0,0,,{\fad(80,60)}今天让你一次。
+Dialogue: 0,0:01:34.62,0:01:35.68,Default,C02,0,0,0,,{\fad(80,60)}你也带礼物了？
+Dialogue: 0,0:01:36.35,0:01:37.31,Default,C01,0,0,0,,{\fad(80,60)}所以我们打平。
+Dialogue: 0,0:01:38.45,0:01:39.89,Default,C01,0,0,0,,{\fad(80,60)}我不是不回来了。我只是去读书。
+Dialogue: 0,0:01:39.97,0:01:40.57,Default,C02,0,0,0,,{\fad(80,60)}那很远。
+Dialogue: 0,0:01:40.92,0:01:42.83,Default,C01,0,0,0,,{\fad(80,60)}地图上远，不代表回不来。
+Dialogue: 0,0:01:42.91,0:01:45.78,Default,C01,0,0,0,,{\fad(80,60)}寒假第一天，还是这辆车。
+Dialogue: 0,0:01:46.17,0:01:46.77,Default,C02,0,0,0,,{\fad(80,60)}去哪？
+Dialogue: 0,0:01:46.85,0:01:47.45,Default,C01,0,0,0,,{\fad(80,60)}你定。
+Dialogue: 0,0:01:50.57,0:01:52.05,Default,C02,0,0,0,,{\fad(80,60)}那下次别骑这么近。
+Dialogue: 0,0:01:52.26,0:01:53.05,Default,C01,0,0,0,,{\fad(80,60)}行。
+Dialogue: 0,0:01:53.47,0:01:54.67,Default,C02,0,0,0,,{\fad(80,60)}骑到海的另一边。
+Dialogue: 0,0:01:55.62,0:01:56.22,Default,C01,0,0,0,,{\fad(80,60)}你先学会别把电影票忘在自己兜里。
+Dialogue: 0,0:01:56.30,0:01:56.90,Default,C02,0,0,0,,{\fad(80,60)}哥。
+Dialogue: 0,0:01:56.98,0:01:57.58,Default,C01,0,0,0,,{\fad(80,60)}嗯？
+Dialogue: 0,0:01:57.66,0:01:58.26,Default,C02,0,0,0,,{\fad(80,60)}下一场，还一起。
+Dialogue: 0,0:01:58.71,0:01:59.75,Default,C01,0,0,0,,{\fad(80,60)}说好了。

@@ -1,0 +1,661 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-19T13:33:57+00:00",
+  "policy": "imported_copy",
+  "shots": {
+    "S001": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机位于粉色自行车左侧，以与车辆平行移动的侧向跟拍方式运动，保持眼平视广角构图，景别和两人在画面中的位置基本稳定。画面内，穿白色背心、浅色短裤、深色运动鞋的年轻男子持续蹬车，头发与背心被风带起，随后迎风微笑并开口说话，目光始终看向右前方；穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的少年坐在后座，身体前倾靠近前者并先开口说话，之后保持前倾姿态。桥面在车轮下稳定后退，远处的山、水面和城市轮廓随跟拍侧向滑过，暖自然光保持不变。\n[环境声] 自行车链条转动声、车轮碾过桥面声、桥上风声持续；[Speaker] 林野（前倾催促，语气急）：快点！今天最后一场，迟到一分钟都不行！；[Speaker] 林川（迎风带笑，语气轻松调侃）：电影又不会跑。以前让你上学，你怎么没这么积极？；[音乐] 轻快木吉他很弱地进入，铺在环境声下方。\n\noverall_soundscape: [环境声] 自行车链条转动声、车轮碾过桥面声、桥上风声持续；[Speaker] 林野（前倾催促，语气急）：快点！今天最后一场，迟到一分钟都不行！；[Speaker] 林川（迎风带笑，语气轻松调侃）：电影又不会跑。以前让你上学，你怎么没这么积极？；[音乐] 轻快木吉他很弱地进入，铺在环境声下方。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机位于粉色自行车左侧，以与车辆平行移动的侧向跟拍方式运动，保持眼平视广角构图，景别和两人在画面中的位置基本稳定。画面内，穿白色背心、浅色短裤、深色运动鞋的年轻男子持续蹬车，头发与背心被风带起，随后迎风微笑并开口说话，目光始终看向右前方；穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的少年坐在后座，身体前倾靠近前者并先开口说话，之后保持前倾姿态。桥面在车轮下稳定后退，远处的山、水面和城市轮廓随跟拍侧向滑过，暖自然光保持不变。\n[环境声] 自行车链条转动声、车轮碾过桥面声、桥上风声持续；[Speaker] 林野（前倾催促，语气急）：快点！今天最后一场，迟到一分钟都不行！；[Speaker] 林川（迎风带笑，语气轻松调侃）：电影又不会跑。以前让你上学，你怎么没这么积极？；[音乐] 轻快木吉他很弱地进入，铺在环境声下方。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S001_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S001_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S001_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png",
+          "usage": "scene",
+          "character_ids": [],
+          "note": "桥面场景锚点"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S002": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持在自行车左侧，以较近的距离与自行车同步向前跟拍，机位和焦距基本不变，维持眼平中近景侧面构图。穿白色背心、浅色短裤的年轻男子（短黑发）双脚持续蹬踏，自行车始终没有减速；他原本带笑的表情在一瞬间停住，嘴角笑意收敛。后座穿橙白深色拼接上衣、蓝色短裤的少年（短黑发）先面朝右侧，随后将头转向左侧，注视年轻男子并开口说：“因为以前你不会明天就走。”粉色车架在画面下方随骑行轻微掠过，桥栏与暖光远景持续柔和虚化。\n[环境声] 自行车链条声、车轮声与桥面风声继续，伴随轻微衣料摩擦声；[Speaker] 林野（看着哥哥，声音放轻、语气自然而认真）：因为以前你不会明天就走。；[音乐] 轻快木吉他继续以很弱的温暖音量演奏，无其他乐器。\n\noverall_soundscape: [环境声] 自行车链条声、车轮声与桥面风声继续，伴随轻微衣料摩擦声；[Speaker] 林野（看着哥哥，声音放轻、语气自然而认真）：因为以前你不会明天就走。；[音乐] 轻快木吉他继续以很弱的温暖音量演奏，无其他乐器。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持在自行车左侧，以较近的距离与自行车同步向前跟拍，机位和焦距基本不变，维持眼平中近景侧面构图。穿白色背心、浅色短裤的年轻男子（短黑发）双脚持续蹬踏，自行车始终没有减速；他原本带笑的表情在一瞬间停住，嘴角笑意收敛。后座穿橙白深色拼接上衣、蓝色短裤的少年（短黑发）先面朝右侧，随后将头转向左侧，注视年轻男子并开口说：“因为以前你不会明天就走。”粉色车架在画面下方随骑行轻微掠过，桥栏与暖光远景持续柔和虚化。\n[环境声] 自行车链条声、车轮声与桥面风声继续，伴随轻微衣料摩擦声；[Speaker] 林野（看着哥哥，声音放轻、语气自然而认真）：因为以前你不会明天就走。；[音乐] 轻快木吉他继续以很弱的温暖音量演奏，无其他乐器。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S002_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S002_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S002_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/IMG01_bridge_bicycle.png",
+          "usage": "scene",
+          "character_ids": [],
+          "note": "桥面场景锚点"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S003": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机采用侧向平移跟拍（tracking shot），与粉色自行车保持平行的中景距离，自行车始终位于画面中央并向画面右侧行进，桥栏与暖色天光在背景中平稳掠过，桥面有轻微颠簸。穿白色背心、浅色短裤、背蓝色背包的前座年轻男子右手控把，左手抬起伸向车篮，迅速扶稳歪倒的棕绿色背包，随后侧头向后座方向打趣，再转回头看向右前方。穿橙白深色拼接上衣、蓝色短裤、白色长袜的后座男孩起初身体微前倾盯着背包并说话，之后抿嘴，将视线从背包移向右前方并答话。\n[环境声] 车轮碾过颠簸桥面声、车篮金属晃动声、风声、链条与轮胎声；[配乐] 轻快木吉他轻声铺底；[对白] 林野（紧张）：“别把那个弄丢了！”林川（带笑打趣）：“里面什么东西，比你哥还重要？”林野（嘴硬）：“到了再告诉你。”\n\noverall_soundscape: [环境声] 车轮碾过颠簸桥面声、车篮金属晃动声、风声、链条与轮胎声；[配乐] 轻快木吉他轻声铺底；[对白] 林野（紧张）：“别把那个弄丢了！”林川（带笑打趣）：“里面什么东西，比你哥还重要？”林野（嘴硬）：“到了再告诉你。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机采用侧向平移跟拍（tracking shot），与粉色自行车保持平行的中景距离，自行车始终位于画面中央并向画面右侧行进，桥栏与暖色天光在背景中平稳掠过，桥面有轻微颠簸。穿白色背心、浅色短裤、背蓝色背包的前座年轻男子右手控把，左手抬起伸向车篮，迅速扶稳歪倒的棕绿色背包，随后侧头向后座方向打趣，再转回头看向右前方。穿橙白深色拼接上衣、蓝色短裤、白色长袜的后座男孩起初身体微前倾盯着背包并说话，之后抿嘴，将视线从背包移向右前方并答话。\n[环境声] 车轮碾过颠簸桥面声、车篮金属晃动声、风声、链条与轮胎声；[配乐] 轻快木吉他轻声铺底；[对白] 林野（紧张）：“别把那个弄丢了！”林川（带笑打趣）：“里面什么东西，比你哥还重要？”林野（嘴硬）：“到了再告诉你。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S003_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S003_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S003_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S004": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机位于自行车前方偏右，以平稳后拉跟拍方式维持中近景，粉色自行车始终位于画面下方中央，身后暖色桥景随车辆前进持续向后流动。画面内，穿白色背心、浅色短裤的前座男子双手握把蹬车，低头瞥向左肩后的蓝色背包，克制地微笑并说话；穿橙白拼接上衣的后座男子微微一怔后上半身凑近。前座男子转过侧脸回望，两人短暂对视；后座男子挑眉微笑并说话。随后前座男子转回前方，立刻发力蹬车，自行车加速前冲，两人同时笑起来，衣物与背包随动作和风轻微晃动。镜头继续平稳后拉直至结束。\n[环境声] 加速后的车轮声、风声、车篮与背包轻碰声；[配乐] 轻快木吉他延续并轻轻推高；[对白] 林川（微笑克制）：“正好，我也有东西没告诉你。”林野（调皮好胜）：“那谁先说谁输。”[笑声] 兄弟俩同时自然轻笑。\n\noverall_soundscape: [环境声] 加速后的车轮声、风声、车篮与背包轻碰声；[配乐] 轻快木吉他延续并轻轻推高；[对白] 林川（微笑克制）：“正好，我也有东西没告诉你。”林野（调皮好胜）：“那谁先说谁输。”[笑声] 兄弟俩同时自然轻笑。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机位于自行车前方偏右，以平稳后拉跟拍方式维持中近景，粉色自行车始终位于画面下方中央，身后暖色桥景随车辆前进持续向后流动。画面内，穿白色背心、浅色短裤的前座男子双手握把蹬车，低头瞥向左肩后的蓝色背包，克制地微笑并说话；穿橙白拼接上衣的后座男子微微一怔后上半身凑近。前座男子转过侧脸回望，两人短暂对视；后座男子挑眉微笑并说话。随后前座男子转回前方，立刻发力蹬车，自行车加速前冲，两人同时笑起来，衣物与背包随动作和风轻微晃动。镜头继续平稳后拉直至结束。\n[环境声] 加速后的车轮声、风声、车篮与背包轻碰声；[配乐] 轻快木吉他延续并轻轻推高；[对白] 林川（微笑克制）：“正好，我也有东西没告诉你。”林野（调皮好胜）：“那谁先说谁输。”[笑声] 兄弟俩同时自然轻笑。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S004_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S004_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S004_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S005": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持平视全景固定机位，先将焦点对准右侧穿橙白深色拼接上衣的少年翻动背包夹层的双手，随后拉焦到他愣住的脸和睁大的眼睛。画面内，右侧少年低头翻找背包内层，指尖随后停在夹层中，表情由翻找变为愣住、睁大眼，并低声说话；左侧穿白色背心、肩背蓝色背包的少年一直面朝右侧看着他，并开口问话。粉色自行车与背景环境保持静止。\n[环境声] 商场人流低语、远处城市交通声、余音未散的自行车刹车声；[动作声] 背包拉链声、布料摩擦声；[Speaker] 林川（略带试探）：“票呢？”[Speaker] 林野（困惑、发愣）：“明明放这里了……”；轻快木吉他以极低音量衬底。\n\noverall_soundscape: [环境声] 商场人流低语、远处城市交通声、余音未散的自行车刹车声；[动作声] 背包拉链声、布料摩擦声；[Speaker] 林川（略带试探）：“票呢？”[Speaker] 林野（困惑、发愣）：“明明放这里了……”；轻快木吉他以极低音量衬底。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持平视全景固定机位，先将焦点对准右侧穿橙白深色拼接上衣的少年翻动背包夹层的双手，随后拉焦到他愣住的脸和睁大的眼睛。画面内，右侧少年低头翻找背包内层，指尖随后停在夹层中，表情由翻找变为愣住、睁大眼，并低声说话；左侧穿白色背心、肩背蓝色背包的少年一直面朝右侧看着他，并开口问话。粉色自行车与背景环境保持静止。\n[环境声] 商场人流低语、远处城市交通声、余音未散的自行车刹车声；[动作声] 背包拉链声、布料摩擦声；[Speaker] 林川（略带试探）：“票呢？”[Speaker] 林野（困惑、发愣）：“明明放这里了……”；轻快木吉他以极低音量衬底。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S005_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S005_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S005_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S006": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持固定，无推拉摇移。画面右侧、穿橙白深色拼接上衣和蓝色短裤、白色长袜、蓝色运动鞋的男子先朝左侧看，随后低头看向敞开的棕绿色背包，表情由专注转为慌乱并急促说话；他微微蹲下，伸手拉开背包其余隔层，同时目光扫向地面。画面左侧、穿白色背心、浅色短裤、深色运动鞋并单肩挎着蓝色背包的男子起初表情严肃地说话，随后收起逗弄神态，迅速弯腰，在自行车、花坛及背包周边区域搜寻。\n[音乐] 木吉他继续，保持轻快温暖。[环境声] 商场人流与城市交通声持续。[动作声] 背包拉链快速拉开、布料摩擦、轻脚步声、蹲身时的衣物摩擦声。[对白] 林川（故意严肃，带一点逗弄）：“最后一场哦。” 林野（一下慌了，压低声音催促）：“你别站着啊，帮我找！”\n\noverall_soundscape: [音乐] 木吉他继续，保持轻快温暖。[环境声] 商场人流与城市交通声持续。[动作声] 背包拉链快速拉开、布料摩擦、轻脚步声、蹲身时的衣物摩擦声。[对白] 林川（故意严肃，带一点逗弄）：“最后一场哦。” 林野（一下慌了，压低声音催促）：“你别站着啊，帮我找！”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持固定，无推拉摇移。画面右侧、穿橙白深色拼接上衣和蓝色短裤、白色长袜、蓝色运动鞋的男子先朝左侧看，随后低头看向敞开的棕绿色背包，表情由专注转为慌乱并急促说话；他微微蹲下，伸手拉开背包其余隔层，同时目光扫向地面。画面左侧、穿白色背心、浅色短裤、深色运动鞋并单肩挎着蓝色背包的男子起初表情严肃地说话，随后收起逗弄神态，迅速弯腰，在自行车、花坛及背包周边区域搜寻。\n[音乐] 木吉他继续，保持轻快温暖。[环境声] 商场人流与城市交通声持续。[动作声] 背包拉链快速拉开、布料摩擦、轻脚步声、蹲身时的衣物摩擦声。[对白] 林川（故意严肃，带一点逗弄）：“最后一场哦。” 林野（一下慌了，压低声音催促）：“你别站着啊，帮我找！”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S006_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S006_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S006_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S007": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持固定机位，无位移、俯仰、摇移或变焦操作，仅进行焦点调度：画面初始焦点对准右侧蹲姿男孩裤兜露出的白纸，随动作发展平滑转移焦点，最终将焦点落于该男孩手中所持的两张电影票上。画面内，留短黑发、身着白色背心、浅色短裤、深色运动鞋、背负蓝色背包的年轻男子始终坐在自行车座上、双脚点地，初始注视右侧男孩的裤兜，随后开口发出询问；在看到男孩掏出电影票后，该男子做出咧嘴大笑的神情并开口说话。留短黑发、身着橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋、背负棕绿色背包的男孩初始俯身低头呈检查自行车底部的姿态，听到询问后低头伸手探向自己露出白纸的裤兜，肩膀与手部骤然僵住停顿，随即从裤兜中掏出两张电影票。\n[环境声] 广场人流声、远处车流声、自行车金属轻响；[动作声] 裤兜布料摩擦声、纸张抽出声；[音乐] 轻快木吉他拨弦，带一点喜剧节奏；[Speaker] 林川：“你兜里是什么？”；[Speaker] 林川（大笑）：“找了五分钟，原来你才是小偷。”\n\noverall_soundscape: [环境声] 广场人流声、远处车流声、自行车金属轻响；[动作声] 裤兜布料摩擦声、纸张抽出声；[音乐] 轻快木吉他拨弦，带一点喜剧节奏；[Speaker] 林川：“你兜里是什么？”；[Speaker] 林川（大笑）：“找了五分钟，原来你才是小偷。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持固定机位，无位移、俯仰、摇移或变焦操作，仅进行焦点调度：画面初始焦点对准右侧蹲姿男孩裤兜露出的白纸，随动作发展平滑转移焦点，最终将焦点落于该男孩手中所持的两张电影票上。画面内，留短黑发、身着白色背心、浅色短裤、深色运动鞋、背负蓝色背包的年轻男子始终坐在自行车座上、双脚点地，初始注视右侧男孩的裤兜，随后开口发出询问；在看到男孩掏出电影票后，该男子做出咧嘴大笑的神情并开口说话。留短黑发、身着橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋、背负棕绿色背包的男孩初始俯身低头呈检查自行车底部的姿态，听到询问后低头伸手探向自己露出白纸的裤兜，肩膀与手部骤然僵住停顿，随即从裤兜中掏出两张电影票。\n[环境声] 广场人流声、远处车流声、自行车金属轻响；[动作声] 裤兜布料摩擦声、纸张抽出声；[音乐] 轻快木吉他拨弦，带一点喜剧节奏；[Speaker] 林川：“你兜里是什么？”；[Speaker] 林川（大笑）：“找了五分钟，原来你才是小偷。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S007_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S007_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S007_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S008": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持水平机位，从自行车前方偏右缓慢向两人推近，最终在两人对视时停住。穿橙白深色拼接上衣、蓝色短裤、白色长袜的年轻男子保持半蹲姿势，面朝左侧，带着尴尬笑容开口说话；随后他笑容稍淡，目光先落到手中的两张电影票上，再抬眼看向对面男子并轻声说话。穿白色背心、浅色短裤、背蓝色背包的年轻男子坐在前座上面朝右侧，原本伸出轻按对方头顶的右手收回，表情无奈又温和地开口回应；随后两人保持短暂对视。\n[环境声] 广场人流声降低为柔和底噪；[动作声] 轻拍头顶的窸窣声、电影票纸张轻微摩擦声；[音乐] 木吉他渐弱，转为温暖克制的钢琴旋律；[Speaker] 林野（尴尬地笑）：“早上怕丢，我换地方了……忘了。”；[Speaker] 林川（温和无奈）：“你这记性，以后我不在，看你怎么办。”；[Speaker] 林野（轻声、笑意收敛）：“所以才要赶上今天。”\n\noverall_soundscape: [环境声] 广场人流声降低为柔和底噪；[动作声] 轻拍头顶的窸窣声、电影票纸张轻微摩擦声；[音乐] 木吉他渐弱，转为温暖克制的钢琴旋律；[Speaker] 林野（尴尬地笑）：“早上怕丢，我换地方了……忘了。”；[Speaker] 林川（温和无奈）：“你这记性，以后我不在，看你怎么办。”；[Speaker] 林野（轻声、笑意收敛）：“所以才要赶上今天。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持水平机位，从自行车前方偏右缓慢向两人推近，最终在两人对视时停住。穿橙白深色拼接上衣、蓝色短裤、白色长袜的年轻男子保持半蹲姿势，面朝左侧，带着尴尬笑容开口说话；随后他笑容稍淡，目光先落到手中的两张电影票上，再抬眼看向对面男子并轻声说话。穿白色背心、浅色短裤、背蓝色背包的年轻男子坐在前座上面朝右侧，原本伸出轻按对方头顶的右手收回，表情无奈又温和地开口回应；随后两人保持短暂对视。\n[环境声] 广场人流声降低为柔和底噪；[动作声] 轻拍头顶的窸窣声、电影票纸张轻微摩擦声；[音乐] 木吉他渐弱，转为温暖克制的钢琴旋律；[Speaker] 林野（尴尬地笑）：“早上怕丢，我换地方了……忘了。”；[Speaker] 林川（温和无奈）：“你这记性，以后我不在，看你怎么办。”；[Speaker] 林野（轻声、笑意收敛）：“所以才要赶上今天。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S008_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S008_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S008_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S009": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 机位保持平视中远景，基本静止。背景玻璃门持续开合，进出人流保持适度虚化。穿白色背心、背蓝色背包的年轻男子起初面向自行车按动车锁；穿橙白深色拼接上衣、背棕绿色背包的年轻男子站在其右后侧，侧身对他，从背包取出牛皮纸信封递出并说话。白衣男子转身伸手去接，拼接上衣男子立刻收回持信的手，带着笑意说话；白衣男子收回手，抿嘴笑并回应。拼接上衣男子挑眉说话，白衣男子靠近半步回应。随后两人笑起来，肩膀轻碰，并肩转向入口方向。\n[环境声] 万达广场入口人流低语、自动门提示、远处城市声；[动作声] 粉色自行车锁扣“咔嗒”落锁、背包拉链声、牛皮纸信封摩擦声、脚步声；[音乐] 轻快木吉他分解和弦，温暖但不压过人声；[对白] 林野：“本来准备电影结束再给你。” 林野：“说好谁先说谁输。” 林川：“行，那我也不说。” 林野：“你真幼稚。” 林川：“跟你学的。”\n\noverall_soundscape: [环境声] 万达广场入口人流低语、自动门提示、远处城市声；[动作声] 粉色自行车锁扣“咔嗒”落锁、背包拉链声、牛皮纸信封摩擦声、脚步声；[音乐] 轻快木吉他分解和弦，温暖但不压过人声；[对白] 林野：“本来准备电影结束再给你。” 林野：“说好谁先说谁输。” 林川：“行，那我也不说。” 林野：“你真幼稚。” 林川：“跟你学的。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "机位保持平视中远景，基本静止。背景玻璃门持续开合，进出人流保持适度虚化。穿白色背心、背蓝色背包的年轻男子起初面向自行车按动车锁；穿橙白深色拼接上衣、背棕绿色背包的年轻男子站在其右后侧，侧身对他，从背包取出牛皮纸信封递出并说话。白衣男子转身伸手去接，拼接上衣男子立刻收回持信的手，带着笑意说话；白衣男子收回手，抿嘴笑并回应。拼接上衣男子挑眉说话，白衣男子靠近半步回应。随后两人笑起来，肩膀轻碰，并肩转向入口方向。\n[环境声] 万达广场入口人流低语、自动门提示、远处城市声；[动作声] 粉色自行车锁扣“咔嗒”落锁、背包拉链声、牛皮纸信封摩擦声、脚步声；[音乐] 轻快木吉他分解和弦，温暖但不压过人声；[对白] 林野：“本来准备电影结束再给你。” 林野：“说好谁先说谁输。” 林川：“行，那我也不说。” 林野：“你真幼稚。” 林川：“跟你学的。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S009_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S009_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S009_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S010": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机采用平视侧面跟拍，与两名男子保持平行并稳定向右移动，景别始终维持中景。画面内，穿白色背心、背蓝色背包的男子与穿橙白深色拼接上衣、背棕绿色背包、手握牛皮纸信封的男子一同从左向右奔跑。跑出几步后，穿橙白深色拼接上衣的男子放慢脚步，转头望向画面左后方的粉色自行车；穿白色背心的男子侧头看向他并开口说话。随后，穿橙白深色拼接上衣的男子转回头，面带笑容加快脚步追上对方，两人肩膀轻碰，继续朝右侧入口的暖色亮光跑去。背景行人因镜头平移与人物运动自然向后掠过。\n[环境声] 入口人流声、广场环境声、脚步声；[动作声] 运动鞋踏地声、背包轻晃声、衣料摩擦声；[音乐] 木吉他轻快旋律延续，收尾自然；[对白] 林川：“别看了，下次还骑。”\n\noverall_soundscape: [环境声] 入口人流声、广场环境声、脚步声；[动作声] 运动鞋踏地声、背包轻晃声、衣料摩擦声；[音乐] 木吉他轻快旋律延续，收尾自然；[对白] 林川：“别看了，下次还骑。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机采用平视侧面跟拍，与两名男子保持平行并稳定向右移动，景别始终维持中景。画面内，穿白色背心、背蓝色背包的男子与穿橙白深色拼接上衣、背棕绿色背包、手握牛皮纸信封的男子一同从左向右奔跑。跑出几步后，穿橙白深色拼接上衣的男子放慢脚步，转头望向画面左后方的粉色自行车；穿白色背心的男子侧头看向他并开口说话。随后，穿橙白深色拼接上衣的男子转回头，面带笑容加快脚步追上对方，两人肩膀轻碰，继续朝右侧入口的暖色亮光跑去。背景行人因镜头平移与人物运动自然向后掠过。\n[环境声] 入口人流声、广场环境声、脚步声；[动作声] 运动鞋踏地声、背包轻晃声、衣料摩擦声；[音乐] 木吉他轻快旋律延续，收尾自然；[对白] 林川：“别看了，下次还骑。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S010_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S010_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S010_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S011": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持静止，中景与眼平角度不变。银幕投来的红橙色微光持续映在两人侧脸和肩线上，背景维持深色虚化排影。穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的短发男子眼睛始终看向前方，右手悄悄抬起，将一只牛皮纸信封越过扶手递向左侧；穿白色背心、浅色短裤、深色运动鞋的偏瘦短发男子没有转头，伸出手接过信封，嘴角微微一动，低声说：“你先输了。”\n[环境声] 低沉连续的放映机运转声与放映厅空调底噪；两人坐下时衣料和座椅轻微摩擦。[对白] 林川（压低声音，语气带一点得逞的平静）：“你先输了。”\n\noverall_soundscape: [环境声] 低沉连续的放映机运转声与放映厅空调底噪；两人坐下时衣料和座椅轻微摩擦。[对白] 林川（压低声音，语气带一点得逞的平静）：“你先输了。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持静止，中景与眼平角度不变。银幕投来的红橙色微光持续映在两人侧脸和肩线上，背景维持深色虚化排影。穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的短发男子眼睛始终看向前方，右手悄悄抬起，将一只牛皮纸信封越过扶手递向左侧；穿白色背心、浅色短裤、深色运动鞋的偏瘦短发男子没有转头，伸出手接过信封，嘴角微微一动，低声说：“你先输了。”\n[环境声] 低沉连续的放映机运转声与放映厅空调底噪；两人坐下时衣料和座椅轻微摩擦。[对白] 林川（压低声音，语气带一点得逞的平静）：“你先输了。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S011_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S011_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S011_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S012": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持静止，全程为眼平近景稳定构图，焦点主要跟随左前景人物的手部与照片。画面右侧、穿橙白深色拼接上衣和蓝色短裤的人物先目视前方，表情轻松嘴硬，说出：“今天让你一次。”随后，画面左前景、穿白色背心和浅色短裤的人物用拇指挑开牛皮纸信封，从里面抽出一张旧照片，举到胸前并微微倾斜，让红橙色银幕光照亮相纸。照片正面显示小时候的两人同骑一辆粉色自行车：前方的人握把骑车，后方的人坐在后座。接着他把照片翻到背面，露出中央手写字：“等我长大，也带你去很远的地方。”他注视照片，沉默不语，露出克制而柔软的笑。整个过程中，右侧的人物始终面朝右侧、目视前方，不看身旁的人，装作满不在乎；两人脚边的蓝色背包与棕绿色背包位置不变。\n[对白] 林野（目视银幕，嘴硬而轻松）：“今天让你一次。” [动作声] 牛皮纸袋被拇指挑开、照片抽出与翻转时的清晰纸张摩擦声。[环境声] 低沉放映声持续。[音乐] 温暖舒缓的轻快木吉他轻轻进入，旋律稀疏克制，不压过对白与动作声。\n\noverall_soundscape: [对白] 林野（目视银幕，嘴硬而轻松）：“今天让你一次。” [动作声] 牛皮纸袋被拇指挑开、照片抽出与翻转时的清晰纸张摩擦声。[环境声] 低沉放映声持续。[音乐] 温暖舒缓的轻快木吉他轻轻进入，旋律稀疏克制，不压过对白与动作声。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持静止，全程为眼平近景稳定构图，焦点主要跟随左前景人物的手部与照片。画面右侧、穿橙白深色拼接上衣和蓝色短裤的人物先目视前方，表情轻松嘴硬，说出：“今天让你一次。”随后，画面左前景、穿白色背心和浅色短裤的人物用拇指挑开牛皮纸信封，从里面抽出一张旧照片，举到胸前并微微倾斜，让红橙色银幕光照亮相纸。照片正面显示小时候的两人同骑一辆粉色自行车：前方的人握把骑车，后方的人坐在后座。接着他把照片翻到背面，露出中央手写字：“等我长大，也带你去很远的地方。”他注视照片，沉默不语，露出克制而柔软的笑。整个过程中，右侧的人物始终面朝右侧、目视前方，不看身旁的人，装作满不在乎；两人脚边的蓝色背包与棕绿色背包位置不变。\n[对白] 林野（目视银幕，嘴硬而轻松）：“今天让你一次。” [动作声] 牛皮纸袋被拇指挑开、照片抽出与翻转时的清晰纸张摩擦声。[环境声] 低沉放映声持续。[音乐] 温暖舒缓的轻快木吉他轻轻进入，旋律稀疏克制，不压过对白与动作声。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S012_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S012_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S012_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S013": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 摄影机保持固定，平视中景双人镜头构图不变。画面右侧穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的男性先朝向前方银幕，随后转头看向画面左侧，并凑近半寸，嘴角带着一点不服气的好奇开口说话。画面左侧穿白色背心、浅色短裤、深色运动鞋的男性低头从腿上的蓝色背包里拿出一个小盒子，盒面在暖光中微亮；他把盒子托在掌心，克制地笑了一下并开口说话，随即掀开盒盖，盒内一枚崭新的自行车钥匙扣轻轻晃动，两个很小的车轮反着微光。最后他注视着钥匙扣，用放轻但稳定的语气继续说话。\n[环境声] 低沉放映厅环境声、远处银幕模糊低频声；[音乐] 舒缓钢琴轻轻进入；[动作声] 背包布料摩擦、小盒开启的轻响、金属钥匙扣极轻的碰撞声；[Speaker] 林野：“你也带礼物了？”；[Speaker] 林川：“所以我们打平。”；[Speaker] 林川：“我不是不回来了。我只是去读书。”\n\noverall_soundscape: [环境声] 低沉放映厅环境声、远处银幕模糊低频声；[音乐] 舒缓钢琴轻轻进入；[动作声] 背包布料摩擦、小盒开启的轻响、金属钥匙扣极轻的碰撞声；[Speaker] 林野：“你也带礼物了？”；[Speaker] 林川：“所以我们打平。”；[Speaker] 林川：“我不是不回来了。我只是去读书。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "摄影机保持固定，平视中景双人镜头构图不变。画面右侧穿橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的男性先朝向前方银幕，随后转头看向画面左侧，并凑近半寸，嘴角带着一点不服气的好奇开口说话。画面左侧穿白色背心、浅色短裤、深色运动鞋的男性低头从腿上的蓝色背包里拿出一个小盒子，盒面在暖光中微亮；他把盒子托在掌心，克制地笑了一下并开口说话，随即掀开盒盖，盒内一枚崭新的自行车钥匙扣轻轻晃动，两个很小的车轮反着微光。最后他注视着钥匙扣，用放轻但稳定的语气继续说话。\n[环境声] 低沉放映厅环境声、远处银幕模糊低频声；[音乐] 舒缓钢琴轻轻进入；[动作声] 背包布料摩擦、小盒开启的轻响、金属钥匙扣极轻的碰撞声；[Speaker] 林野：“你也带礼物了？”；[Speaker] 林川：“所以我们打平。”；[Speaker] 林川：“我不是不回来了。我只是去读书。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S013_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S013_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S013_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S014": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 固定机位，景别与构图基本保持不变。画面中左侧穿白色背心、腿侧露出蓝色背包边缘的少年指间挂着的自行车钥匙扣，两个小车轮轻轻转动。画面右侧穿橙白拼接上衣、下方暗处可见白色长袜与蓝色运动鞋的少年视线先停在钥匙扣上，随后抬眼看向对方开口说话。穿白色背心的少年轻轻摇头，目光坦然地回应，接着把钥匙扣塞进对方掌心，并抬手帮对方把手指合拢。穿橙白拼接上衣的少年攥住钥匙扣，嘴角微撇地发问；穿白色背心的少年挑起一边嘴角，露出开朗又克制的笑意并回答。\n[环境声] 持续低沉的放映厅环境声；[音乐] 舒缓钢琴延续，尾音温暖；[动作声] 金属钥匙扣轻响、放入掌心时的细微摩擦声；[Speaker] 林野：“那很远。”；[Speaker] 林川：“地图上远，不代表回不来。”；[Speaker] 林川：“寒假第一天，还是这辆车。”；[Speaker] 林野：“去哪？”；[Speaker] 林川：“你定。”\n\noverall_soundscape: [环境声] 持续低沉的放映厅环境声；[音乐] 舒缓钢琴延续，尾音温暖；[动作声] 金属钥匙扣轻响、放入掌心时的细微摩擦声；[Speaker] 林野：“那很远。”；[Speaker] 林川：“地图上远，不代表回不来。”；[Speaker] 林川：“寒假第一天，还是这辆车。”；[Speaker] 林野：“去哪？”；[Speaker] 林川：“你定。”\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "固定机位，景别与构图基本保持不变。画面中左侧穿白色背心、腿侧露出蓝色背包边缘的少年指间挂着的自行车钥匙扣，两个小车轮轻轻转动。画面右侧穿橙白拼接上衣、下方暗处可见白色长袜与蓝色运动鞋的少年视线先停在钥匙扣上，随后抬眼看向对方开口说话。穿白色背心的少年轻轻摇头，目光坦然地回应，接着把钥匙扣塞进对方掌心，并抬手帮对方把手指合拢。穿橙白拼接上衣的少年攥住钥匙扣，嘴角微撇地发问；穿白色背心的少年挑起一边嘴角，露出开朗又克制的笑意并回答。\n[环境声] 持续低沉的放映厅环境声；[音乐] 舒缓钢琴延续，尾音温暖；[动作声] 金属钥匙扣轻响、放入掌心时的细微摩擦声；[Speaker] 林野：“那很远。”；[Speaker] 林川：“地图上远，不代表回不来。”；[Speaker] 林川：“寒假第一天，还是这辆车。”；[Speaker] 林野：“去哪？”；[Speaker] 林川：“你定。”",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S014_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S014_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S014_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S015": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 固定机位静态拍摄，全程保持中景双人景别，摄影机无位移、变焦或角度调整。画面右侧身着橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的短黑发男子先是低头，将手中的旧照片塞入信封，再把自行车钥匙扣挂到膝头的棕绿色背包上；随后他侧头朝向画面左侧的男子开口说话，说完后将信封塞进棕绿色背包，再次轻声开口。画面左侧身着白色背心、浅色短裤、深色运动鞋的短黑发偏瘦男子起初面向前方银幕，听到右侧男子的话语后开口回应，之后转过脸朝向右侧男子笑着说话。右侧男子听完后笑着用肩膀轻推左侧男子，两人一同发笑。随后前方银幕的光线逐渐提亮，两名男子同时转过脸，面向前方银幕坐定。\n[环境声] 放映厅低音环境、座椅轻微响动、衣服摩擦声、信封纸张声、钥匙扣金属轻碰声；[Speaker] 林野：“那下次别骑这么近。”[Speaker] 林川：“行。”[Speaker] 林野：“骑到海的另一边。”[Speaker] 林川（笑）：“你先学会别把电影票忘在自己兜里。”[音效] 两人压低的笑声；银幕开场光线亮起时传来极轻的影片环境声，背景仅有极淡的木吉他拨弦。\n\noverall_soundscape: [环境声] 放映厅低音环境、座椅轻微响动、衣服摩擦声、信封纸张声、钥匙扣金属轻碰声；[Speaker] 林野：“那下次别骑这么近。”[Speaker] 林川：“行。”[Speaker] 林野：“骑到海的另一边。”[Speaker] 林川（笑）：“你先学会别把电影票忘在自己兜里。”[音效] 两人压低的笑声；银幕开场光线亮起时传来极轻的影片环境声，背景仅有极淡的木吉他拨弦。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "固定机位静态拍摄，全程保持中景双人景别，摄影机无位移、变焦或角度调整。画面右侧身着橙白深色拼接上衣、蓝色短裤、白色长袜、蓝色运动鞋的短黑发男子先是低头，将手中的旧照片塞入信封，再把自行车钥匙扣挂到膝头的棕绿色背包上；随后他侧头朝向画面左侧的男子开口说话，说完后将信封塞进棕绿色背包，再次轻声开口。画面左侧身着白色背心、浅色短裤、深色运动鞋的短黑发偏瘦男子起初面向前方银幕，听到右侧男子的话语后开口回应，之后转过脸朝向右侧男子笑着说话。右侧男子听完后笑着用肩膀轻推左侧男子，两人一同发笑。随后前方银幕的光线逐渐提亮，两名男子同时转过脸，面向前方银幕坐定。\n[环境声] 放映厅低音环境、座椅轻微响动、衣服摩擦声、信封纸张声、钥匙扣金属轻碰声；[Speaker] 林野：“那下次别骑这么近。”[Speaker] 林川：“行。”[Speaker] 林野：“骑到海的另一边。”[Speaker] 林川（笑）：“你先学会别把电影票忘在自己兜里。”[音效] 两人压低的笑声；银幕开场光线亮起时传来极轻的影片环境声，背景仅有极淡的木吉他拨弦。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S015_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S015_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S015_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    },
+    "S016": {
+      "generation_mode": "ref2va",
+      "mode_label": "多参考 Ref2VA",
+      "prompt": "integrated_multimodal_description: 镜头先以双人近景短暂固定，随后缓慢推近并微微下摇；当两人碰拳时，镜头继续缓缓下摇，焦点同步从面部转移到下半部的拳头。暖色银幕光随放映在两人脸上轻微跳动。画面右侧穿橙白深色拼接上衣、蓝色短裤的男子嘴唇微动，面向前方银幕轻声说话；画面左侧穿白色背心、浅色短裤的男子目视前方，鼻音回应。接着左侧男子把脸转向右侧男子，抬起右手握拳伸到两人之间；右侧男子低头看向拳头，露出笑容，伸出右拳轻轻相碰，左侧男子随之轻声说话。过程中，右侧男子膝头棕绿色背包上的自行车钥匙扣微微晃动，左下角蓝色背包边缘位置不变，上方暖色银幕光逐渐虚化。\n[环境声] 放映厅低沉空间声、衣物摩擦声、拳头轻碰声、钥匙扣细微晃动声；[Speaker] 林野（轻声）：“哥。”[Speaker] 林川：“嗯？”[Speaker] 林野：“下一场，还一起。”[Speaker] 林川：“说好了。”[音乐] 轻快木吉他在碰拳时进入一小段温暖旋律，音量克制，收尾干净。\n\noverall_soundscape: [环境声] 放映厅低沉空间声、衣物摩擦声、拳头轻碰声、钥匙扣细微晃动声；[Speaker] 林野（轻声）：“哥。”[Speaker] 林川：“嗯？”[Speaker] 林野：“下一场，还一起。”[Speaker] 林川：“说好了。”[音乐] 轻快木吉他在碰拳时进入一小段温暖旋律，音量克制，收尾干净。\n\nnon_diegetic_music: N/A",
+      "origin_prompt": "镜头先以双人近景短暂固定，随后缓慢推近并微微下摇；当两人碰拳时，镜头继续缓缓下摇，焦点同步从面部转移到下半部的拳头。暖色银幕光随放映在两人脸上轻微跳动。画面右侧穿橙白深色拼接上衣、蓝色短裤的男子嘴唇微动，面向前方银幕轻声说话；画面左侧穿白色背心、浅色短裤的男子目视前方，鼻音回应。接着左侧男子把脸转向右侧男子，抬起右手握拳伸到两人之间；右侧男子低头看向拳头，露出笑容，伸出右拳轻轻相碰，左侧男子随之轻声说话。过程中，右侧男子膝头棕绿色背包上的自行车钥匙扣微微晃动，左下角蓝色背包边缘位置不变，上方暖色银幕光逐渐虚化。\n[环境声] 放映厅低沉空间声、衣物摩擦声、拳头轻碰声、钥匙扣细微晃动声；[Speaker] 林野（轻声）：“哥。”[Speaker] 林川：“嗯？”[Speaker] 林野：“下一场，还一起。”[Speaker] 林川：“说好了。”[音乐] 轻快木吉他在碰拳时进入一小段温暖旋律，音量克制，收尾干净。",
+      "first_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S016_first_frame.png",
+      "last_frame": null,
+      "reference_images": [
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S016_first_frame.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+        "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png"
+      ],
+      "reference_image_bindings": [
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S016_first_frame.png",
+          "usage": "keyframe",
+          "character_ids": [],
+          "note": "镜头首帧"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C01_linchuan_white_tank.png",
+          "usage": "identity",
+          "character_ids": [
+            "C01"
+          ],
+          "note": "林川身份参考"
+        },
+        {
+          "path": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/C02_linye_orange_shirt.png",
+          "usage": "identity",
+          "character_ids": [
+            "C02"
+          ],
+          "note": "林野身份参考"
+        }
+      ],
+      "approved": true,
+      "locked": true,
+      "seed": 2101
+    }
+  }
+}

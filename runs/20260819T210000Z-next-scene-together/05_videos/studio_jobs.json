@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-19T13:33:57+00:00",
+  "jobs": {
+    "S001-699ff0a153": {
+      "job_id": "S001-699ff0a153",
+      "shot_id": "S001",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S001/S001-699ff0a153.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S001_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S002-a715dae938": {
+      "job_id": "S002-a715dae938",
+      "shot_id": "S002",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S002/S002-a715dae938.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S002_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S003-f7c6362fdb": {
+      "job_id": "S003-f7c6362fdb",
+      "shot_id": "S003",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S003/S003-f7c6362fdb.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S003_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S004-3cb627e46f": {
+      "job_id": "S004-3cb627e46f",
+      "shot_id": "S004",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S004/S004-3cb627e46f.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S004_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S005-e08d3d66ce": {
+      "job_id": "S005-e08d3d66ce",
+      "shot_id": "S005",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S005/S005-e08d3d66ce.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S005_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S006-e6042b10b2": {
+      "job_id": "S006-e6042b10b2",
+      "shot_id": "S006",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S006/S006-e6042b10b2.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S006_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S007-7f1d222bee": {
+      "job_id": "S007-7f1d222bee",
+      "shot_id": "S007",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S007/S007-7f1d222bee.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S007_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S008-5d8e617f75": {
+      "job_id": "S008-5d8e617f75",
+      "shot_id": "S008",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S008/S008-5d8e617f75.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S008_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S009-48b89a0078": {
+      "job_id": "S009-48b89a0078",
+      "shot_id": "S009",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S009/S009-48b89a0078.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S009_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S010-b89db29abc": {
+      "job_id": "S010-b89db29abc",
+      "shot_id": "S010",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S010/S010-b89db29abc.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S010_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S011-595abfa219": {
+      "job_id": "S011-595abfa219",
+      "shot_id": "S011",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S011/S011-595abfa219.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S011_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S012-74fba304f5": {
+      "job_id": "S012-74fba304f5",
+      "shot_id": "S012",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S012/S012-74fba304f5.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S012_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S013-1fbe3c9f3f": {
+      "job_id": "S013-1fbe3c9f3f",
+      "shot_id": "S013",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S013/S013-1fbe3c9f3f.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S013_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S014-678efc229d": {
+      "job_id": "S014-678efc229d",
+      "shot_id": "S014",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S014/S014-678efc229d.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S014_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S015-6884b6ec73": {
+      "job_id": "S015-6884b6ec73",
+      "shot_id": "S015",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S015/S015-6884b6ec73.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S015_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    },
+    "S016-fd7dfa5bd6": {
+      "job_id": "S016-fd7dfa5bd6",
+      "shot_id": "S016",
+      "status": "completed",
+      "generation_mode": "ref2va",
+      "video": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/05_videos/studio_generations/S016/S016-fd7dfa5bd6.mp4",
+      "last_frame": "/data/yyli/minimax_short_drama/runs/20260819T210000Z-next-scene-together/inputs/studio_uploads/images/S016_first_frame.png",
+      "completed_at": "2026-08-19T13:33:57+00:00",
+      "origin": "imported_copy"
+    }
+  }
+}
