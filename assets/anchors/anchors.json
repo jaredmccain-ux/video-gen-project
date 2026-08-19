@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "story_id": "mvp_story_001",
+  "created_at_utc": "2026-08-06T08:56:57.435447+00:00",
+  "anchor_count": 3,
+  "target_canvas": {
+    "width": 832,
+    "height": 480
+  },
+  "ordering_note": "Slots record user selection only; the LLM determines narrative order later.",
+  "anchors": [
+    {
+      "slot": 1,
+      "image_id": "16",
+      "source_path": "Train/16.jpg",
+      "source_sha256": "d0f965ed1b9e637f121c972bb7f93954b0cc7d5da00c9917c0ed671f4f4ce48b",
+      "source_format": "JPEG",
+      "source_mode_after_exif": "RGB",
+      "source_size": {
+        "width": 1200,
+        "height": 934
+      },
+      "quality_check": {
+        "readable": true,
+        "rgb_convertible": true,
+        "minimum_size": {
+          "width": 832,
+          "height": 480
+        },
+        "passed": true
+      },
+      "normalization": {
+        "method": "center_crop_then_resize",
+        "crop_box_ltrb": [
+          0,
+          121,
+          1200,
+          813
+        ],
+        "cropped_size": {
+          "width": 1200,
+          "height": 692
+        },
+        "resize_filter": "LANCZOS",
+        "scale": {
+          "x": 0.6933333333333334,
+          "y": 0.6936416184971098
+        },
+        "output_size": {
+          "width": 832,
+          "height": 480
+        }
+      },
+      "normalized_path": "runs/mvp_story_001/anchors/anchor_01_832x480.png",
+      "normalized_sha256": "cb9d7135005476e48e0d017373682d67f84a8cd23703d1e6c3e1b932dd53a935",
+      "exact_first_frame_definition": "normalized_832x480_anchor"
+    },
+    {
+      "slot": 2,
+      "image_id": "99",
+      "source_path": "Train/99.jpg",
+      "source_sha256": "f148ab1a0c74e656c7d743e8e297b3d449d37833ee920ff020ce87a656aef26d",
+      "source_format": "JPEG",
+      "source_mode_after_exif": "RGB",
+      "source_size": {
+        "width": 1200,
+        "height": 868
+      },
+      "quality_check": {
+        "readable": true,
+        "rgb_convertible": true,
+        "minimum_size": {
+          "width": 832,
+          "height": 480
+        },
+        "passed": true
+      },
+      "normalization": {
+        "method": "center_crop_then_resize",
+        "crop_box_ltrb": [
+          0,
+          88,
+          1200,
+          780
+        ],
+        "cropped_size": {
+          "width": 1200,
+          "height": 692
+        },
+        "resize_filter": "LANCZOS",
+        "scale": {
+          "x": 0.6933333333333334,
+          "y": 0.6936416184971098
+        },
+        "output_size": {
+          "width": 832,
+          "height": 480
+        }
+      },
+      "normalized_path": "runs/mvp_story_001/anchors/anchor_02_832x480.png",
+      "normalized_sha256": "2c52af77ad961a345cc9e17a59587320e47c2f5d9630ae0a923a5cfd23837677",
+      "exact_first_frame_definition": "normalized_832x480_anchor"
+    },
+    {
+      "slot": 3,
+      "image_id": "324",
+      "source_path": "Train/324.jpg",
+      "source_sha256": "96cc00d96053ced0b97071cc7e17acd0aeb906538a2d48793ad506795f29040b",
+      "source_format": "JPEG",
+      "source_mode_after_exif": "RGB",
+      "source_size": {
+        "width": 1241,
+        "height": 666
+      },
+      "quality_check": {
+        "readable": true,
+        "rgb_convertible": true,
+        "minimum_size": {
+          "width": 832,
+          "height": 480
+        },
+        "passed": true
+      },
+      "normalization": {
+        "method": "center_crop_then_resize",
+        "crop_box_ltrb": [
+          43,
+          0,
+          1197,
+          666
+        ],
+        "cropped_size": {
+          "width": 1154,
+          "height": 666
+        },
+        "resize_filter": "LANCZOS",
+        "scale": {
+          "x": 0.7209705372616985,
+          "y": 0.7207207207207207
+        },
+        "output_size": {
+          "width": 832,
+          "height": 480
+        }
+      },
+      "normalized_path": "runs/mvp_story_001/anchors/anchor_03_832x480.png",
+      "normalized_sha256": "ba4b13e59c0580a752a51fad49fdddbcec1056bd811d835b06fbd60edc12e816",
+      "exact_first_frame_definition": "normalized_832x480_anchor"
+    }
+  ]
+}
