@@ -1,0 +1,25 @@
+{
+  "name": "sceneflow-demo-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion 工程：SceneFlow 三分钟系统演示片",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "voice": "bash scripts/voice.sh",
+    "studio": "remotion studio src/index.ts",
+    "still": "remotion still src/index.ts SceneFlowDemo",
+    "render": "remotion render src/index.ts SceneFlowDemo out/sceneflow-demo.mp4"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.513",
+    "@remotion/media-utils": "^4.0.513",
+    "@remotion/renderer": "^4.0.513",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.513"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.43.1"
+  }
+}
